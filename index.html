@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trúc Võ - Cân Bằng Năng Lượng & Trao Giá Trị</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#F4F7F4',
+                            100: '#E3EBE3',
+                            200: '#C8D8C7',
+                            300: '#9EBA9C',
+                            500: '#5B7E58',
+                            600: '#476545',
+                            700: '#385036',
+                            800: '#2A3C29',
+                            900: '#1C281B'
+                        },
+                        earth: {
+                            50: '#FAF6F0',
+                            100: '#F3EADF',
+                            200: '#E4D3C1',
+                            300: '#D0B69E',
+                            500: '#A67C52',
+                            600: '#8C5E34',
+                            700: '#6E4522',
+                            800: '#4A2E16',
+                            900: '#2D1B0C'
+                        },
+                        amberGold: {
+                            400: '#E2A84B',
+                            500: '#C88B2C',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        handwriting: ['"Caveat"', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #FAF6F0;
+            color: #2D1B0C;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .font-serif-title { font-family: 'Playfair Display', Georgia, serif; }
+        .font-handwriting { font-family: 'Caveat', cursive; }
+
+        .glass-panel {
+            background: rgba(250, 246, 240, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(200, 216, 199, 0.6);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(227, 235, 227, 0.9);
+        }
+
+        .shadow-warm {
+            box-shadow: 0 15px 35px -10px rgba(56, 80, 54, 0.12), 0 5px 15px -5px rgba(110, 69, 34, 0.08);
+        }
+        
+        .shadow-hover {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .shadow-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 45px -12px rgba(56, 80, 54, 0.22), 0 10px 20px -5px rgba(110, 69, 34, 0.12);
+        }
+
+        .bg-pattern {
+            background-image: radial-gradient(#5B7E58 0.6px, transparent 0.6px);
+            background-size: 32px 32px;
+            opacity: 0.07;
+        }
+    </style>
+</head>
+<body class="relative font-sans text-earth-900 selection:bg-sage-200 selection:text-sage-900 text-base leading-relaxed">
+
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <!-- NAVIGATION HEADER -->
+    <nav class="sticky top-0 z-50 w-full glass-panel border-b border-sage-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full bg-sage-700 text-earth-100 flex items-center justify-center font-serif text-2xl font-bold shadow-md group-hover:bg-earth-600 transition-all duration-300">
+                        TV
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif-title text-2xl font-bold text-sage-900 leading-none group-hover:text-earth-700 transition-colors">TRÚC VÕ</span>
+                        <span class="text-xs tracking-widest text-earth-600 font-bold uppercase mt-1">Cân Bằng Năng Lượng & Trao Giá Trị</span>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8 text-sm font-bold uppercase tracking-wider text-sage-900">
+                    <a href="#about" class="hover:text-earth-600 transition-colors">Giới Thiệu</a>
+                    <a href="#roadmap" class="hover:text-earth-600 transition-colors">Lộ Trình 5 Tháng</a>
+                    <a href="#deliverables" class="hover:text-earth-600 transition-colors">Bộ Hồ Sơ Tự Tạo</a>
+                    <a href="#register" class="hover:text-earth-600 transition-colors">Học Phí & Đăng Ký</a>
+                </div>
+
+                <div class="hidden sm:flex items-center space-x-4">
+                    <a href="https://www.facebook.com/truc.vo.211966?locale=vi_VN" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-sage-100 text-sage-700 flex items-center justify-center hover:bg-earth-600 hover:text-white transition-all shadow-sm">
+                        <i class="fa-brands fa-facebook-f text-base"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@tracyvo451" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-earth-100 text-earth-700 flex items-center justify-center hover:bg-red-600 hover:text-white transition-all shadow-sm">
+                        <i class="fa-brands fa-youtube text-base"></i>
+                    </a>
+                    <a href="#register" class="bg-sage-700 hover:bg-earth-600 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full shadow-md transition-all flex items-center gap-2 hover:scale-105">
+                        <span>Đăng Ký Ngay</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-sage-900 p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-sage-200 px-6 pt-4 pb-6 space-y-4 shadow-xl">
+            <a href="#about" class="block text-sage-900 font-bold text-base hover:text-earth-600">Giới Thiệu</a>
+            <a href="#roadmap" class="block text-sage-900 font-bold text-base hover:text-earth-600">Lộ Trình 5 Tháng</a>
+            <a href="#deliverables" class="block text-sage-900 font-bold text-base hover:text-earth-600">Bộ Hồ Sơ Tự Tạo</a>
+            <a href="#register" class="block text-sage-900 font-bold text-base hover:text-earth-600">Học Phí & Đăng Ký</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="about" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sage-100 border border-sage-200 text-sage-800 text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-bolt text-amberGold-500"></i>
+                        <span>Hành Trình Đồng Hành 5 Tháng</span>
+                    </div>
+
+                    <h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-bold text-sage-900 leading-tight">
+                        Cân Bằng Năng Lượng – <span class="text-earth-600 italic underline decoration-sage-300 underline-offset-8">Trao Giá Trị</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-earth-800 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        Từ việc nhìn lại cách bạn đang sống đến việc xây dựng một con đường sự nghiệp mang dấu ấn của riêng mình. Bắt đầu từ chính nguồn năng lượng và giá trị bạn đang có.
+                    </p>
+
+                    <div class="p-6 rounded-2xl glass-card border border-sage-200 shadow-warm max-w-xl mx-auto lg:mx-0 text-left flex items-center gap-5">
+                        <div class="w-16 h-16 rounded-full bg-sage-100 flex-shrink-0 border-2 border-sage-500 overflow-hidden shadow">
+                            <img src="trucvoava.jpg" alt="Trúc Võ" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-handwriting text-2xl text-earth-700 leading-tight">"Năng lượng của bạn thực sự đang đi đâu?"</p>
+                            <p class="text-sm text-sage-800 font-bold mt-1">— <strong class="text-sage-900">Trúc Võ</strong> (Người Đồng Hành)</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#register" class="inline-flex items-center justify-center gap-3 bg-sage-700 hover:bg-earth-600 text-white font-bold text-base px-8 py-4 rounded-full shadow-lg transition-all hover:scale-105">
+                            <span>Đăng Ký Tham Gia Hành Trình</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="#roadmap" class="inline-flex items-center justify-center gap-2 bg-earth-100 hover:bg-earth-200 text-earth-800 font-bold text-base px-8 py-4 rounded-full border border-earth-300 transition-all">
+                            <span>Khám Phá Lộ Trình</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 flex justify-center relative">
+                    <div class="relative w-full max-w-md">
+                        <div class="relative rounded-3xl p-3 bg-white shadow-warm border border-sage-200 shadow-hover">
+                            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-sage-50">
+                                <img src="trucvoava.jpg" alt="Trúc Võ" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-sage-900/80 via-transparent to-transparent"></div>
+                                
+                                <div class="absolute bottom-5 left-5 right-5 glass-panel p-4 rounded-xl text-center border border-white/60">
+                                    <p class="font-serif-title text-2xl font-bold text-sage-900">Trúc Võ</p>
+                                    <p class="text-xs text-earth-800 font-semibold mt-1">Đồng hành tái tạo năng lượng & kiến tạo giá trị cá nhân</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: LỘ TRÌNH 5 THÁNG -->
+    <section id="roadmap" class="py-20 bg-sage-100/40 border-y border-sage-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-14">
+                <span class="px-4 py-1.5 rounded-full bg-sage-200 text-sage-800 text-xs font-bold uppercase tracking-wider">Hành Trình Từng Bước</span>
+                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sage-900">
+                    Lộ Trình Chuyển Hóa 5 Tháng
+                </h2>
+                <p class="text-earth-800 text-base sm:text-lg">
+                    Không bắt đầu bằng câu hỏi "Bạn sẽ bán gì?", mà bằng "Năng lượng của bạn đang đi đâu?"
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- T1 -->
+                <div class="bg-white p-7 rounded-3xl border border-sage-200 shadow-warm shadow-hover space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3.5 py-1 rounded-full bg-sage-700 text-white text-xs font-bold">THÁNG 1</span>
+                        <i class="fa-solid fa-compass text-sage-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif-title text-2xl font-bold text-sage-900">NHÌN THẤY</h3>
+                    <p class="text-sm text-earth-700 font-bold">Bản đồ năng lượng cá nhân</p>
+                    <p class="text-sm text-earth-800 leading-relaxed">Quan sát đời sống hiện tại: Điều gì rút cạn năng lượng? Điều gì nuôi dưỡng bạn? Định vị chính xác năng lượng thực tế.</p>
+                    <div class="pt-4 border-t border-sage-100 text-xs text-sage-900 space-y-1.5">
+                        <p class="font-bold text-sm text-sage-900"><i class="fa-solid fa-circle-check text-sage-600 mr-1.5"></i> Đầu ra:</p>
+                        <p>• 01 Bản đồ năng lượng cá nhân</p>
+                        <p>• 01 Nhật ký năng lượng 30 ngày</p>
+                    </div>
+                </div>
+
+                <!-- T2 -->
+                <div class="bg-white p-7 rounded-3xl border border-sage-200 shadow-warm shadow-hover space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3.5 py-1 rounded-full bg-earth-600 text-white text-xs font-bold">THÁNG 2</span>
+                        <i class="fa-solid fa-bullseye text-earth-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif-title text-2xl font-bold text-sage-900">THU HỒI</h3>
+                    <p class="text-sm text-earth-700 font-bold">Tập trung điều quan trọng</p>
+                    <p class="text-sm text-earth-800 leading-relaxed">Xác định 3 trọng tâm chính. Giảm sự phân tán, buông bỏ những điều không cần thiết và thu hồi năng lượng cốt lõi.</p>
+                    <div class="pt-4 border-t border-sage-100 text-xs text-sage-900 space-y-1.5">
+                        <p class="font-bold text-sm text-sage-900"><i class="fa-solid fa-circle-check text-sage-600 mr-1.5"></i> Đầu ra:</p>
+                        <p>• 01 Bản đồ 3 trọng tâm</p>
+                        <p>• 01 Kế hoạch bảo vệ 3 trọng tâm</p>
+                    </div>
+                </div>
+
+                <!-- T3 -->
+                <div class="bg-white p-7 rounded-3xl border border-sage-200 shadow-warm shadow-hover space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3.5 py-1 rounded-full bg-sage-700 text-white text-xs font-bold">THÁNG 3</span>
+                        <i class="fa-solid fa-scale-balanced text-sage-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif-title text-2xl font-bold text-sage-900">CÂN BẰNG</h3>
+                    <p class="text-sm text-earth-700 font-bold">Thiết kế nhịp sống bền vững</p>
+                    <p class="text-sm text-earth-800 leading-relaxed">Tạo dựng nhịp sống hòa hợp giữa Công việc – Gia đình – Bản thân – Sự nghiệp riêng mà không lo cạn kiệt năng lượng.</p>
+                    <div class="pt-4 border-t border-sage-100 text-xs text-sage-900 space-y-1.5">
+                        <p class="font-bold text-sm text-sage-900"><i class="fa-solid fa-circle-check text-sage-600 mr-1.5"></i> Đầu ra:</p>
+                        <p>• 01 Bản thiết kế nhịp sống cá nhân</p>
+                        <p>• Khung thời gian phục hồi & sự nghiệp</p>
+                    </div>
+                </div>
+
+                <!-- T4 -->
+                <div class="bg-white p-7 rounded-3xl border border-sage-200 shadow-warm shadow-hover space-y-4 lg:col-span-1.5">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3.5 py-1 rounded-full bg-earth-600 text-white text-xs font-bold">THÁNG 4</span>
+                        <i class="fa-solid fa-heart-circle-plus text-earth-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif-title text-2xl font-bold text-sage-900">NHẬN RA & TRAO GIÁ TRỊ</h3>
+                    <p class="text-sm text-earth-700 font-bold">Bóc tách tài sản vô hình</p>
+                    <p class="text-sm text-earth-800 leading-relaxed">Chuyển từ "Tôi muốn làm gì?" sang "Tôi có gì để trao?". Đúc kết tri thức, kinh nghiệm thành bộ nội dung chia sẻ đầu tiên.</p>
+                    <div class="pt-4 border-t border-sage-100 text-xs text-sage-900 space-y-1.5">
+                        <p class="font-bold text-sm text-sage-900"><i class="fa-solid fa-circle-check text-sage-600 mr-1.5"></i> Đầu ra:</p>
+                        <p>• 01 Bản đồ giá trị cá nhân</p>
+                        <p>• Bộ 3–5 bài viết/video đầu tiên</p>
+                    </div>
+                </div>
+
+                <!-- T5 -->
+                <div class="bg-white p-7 rounded-3xl border border-sage-200 shadow-warm shadow-hover space-y-4 lg:col-span-1.5">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3.5 py-1 rounded-full bg-sage-800 text-white text-xs font-bold">THÁNG 5</span>
+                        <i class="fa-solid fa-coins text-amberGold-500 text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif-title text-2xl font-bold text-sage-900">TRAO GIÁ TRỊ & TẠO THU NHẬP</h3>
+                    <p class="text-sm text-earth-700 font-bold">Biến giá trị thành sản phẩm</p>
+                    <p class="text-sm text-earth-800 leading-relaxed">Đưa giải pháp ra đời sống thật: Giá trị &rarr; Giải pháp &rarr; Sản phẩm &rarr; Thu nhập. Bắt đầu ngay mà không cần chờ hoàn hảo.</p>
+                    <div class="pt-4 border-t border-sage-100 text-xs text-sage-900 space-y-1.5">
+                        <p class="font-bold text-sm text-sage-900"><i class="fa-solid fa-circle-check text-sage-600 mr-1.5"></i> Đầu ra:</p>
+                        <p>• 01 Sản phẩm/Giải pháp phiên bản 1.0</p>
+                        <p>• Kế hoạch tiếp cận khách hàng đầu tiên</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: BỘ HỒ SƠ 10 MÓN (ĐÃ CĂN GIỮA VÀ CHIA BỐ CỤC RÕ RÀNG) -->
+    <section id="deliverables" class="py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-sage-800 text-white rounded-3xl p-8 sm:p-14 shadow-2xl border border-sage-700 text-center">
+                
+                <!-- Tiêu đề Căn Giữa -->
+                <div class="max-w-2xl mx-auto space-y-3 mb-10">
+                    <span class="px-4 py-1.5 rounded-full bg-sage-700 text-amberGold-400 text-xs font-bold uppercase tracking-wider inline-block">
+                        Thành Quả Sau 5 Tháng
+                    </span>
+                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-white">
+                        10 Tài Sản Bạn Tự Tay Tạo Ra
+                    </h2>
+                    <p class="text-sm sm:text-base text-sage-200">
+                        Trong suốt hành trình, bạn không chỉ học lý thuyết mà sẽ hoàn thiện trọn bộ hồ sơ sự nghiệp cá nhân thực tế:
+                    </p>
+                </div>
+
+                <!-- Bố cục 10 món chia 2 cột đối xứng -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                    
+                    <div class="p-4 rounded-xl bg-sage-900/60 border border-sage-700 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-amberGold-500/20 text-amberGold-400 flex items-center justify-center font-bold text-xs flex-shrink-0">01</span>
+                        <span class="text-sm sm:text-base font-medium text-sage-100">Bản đồ năng lượng cá nhân</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sage-900/60 border border-sage-700 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-amberGold-500/20 text-amberGold-400 flex items-center justify-center font-bold text-xs flex-shrink-0">02</span>
+                        <span class="text-sm sm:text-base font-medium text-sage-100">Nhật ký năng lượng 30 ngày</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sage-900/60 border border-sage-700 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-amberGold-500/20 text-amberGold-400 flex items-center justify-center font-bold text-xs flex-shrink-0">03</span>
+                        <span class="text-sm sm:text-base font-medium text-sage-100">Bản đồ 3 trọng tâm cốt lõi</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sage-900/60 border border-sage-700 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-amberGold-500/20 text-amberGold-400 flex items-center justify-center font-bold text-xs flex-shrink-0">04</span>
+                        <span class="text-sm sm:text-base font-medium text-sage-100">Bản thiết kế nhịp sống cá nhân</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sage-900/60 border border-sage-700 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-amberGold-500/20 text-amberGold-400 flex items-center justify-center font-bold text-xs flex-shrink-0">05</span>
+                        <span class="text-sm sm:text-base font-medium text-sage-100">Bản đồ giá trị cá nhân</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sage-900/60 border border-sage-700 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-amberGold-500/20 text-amberGold-400 flex items-center justify-center font-bold text-xs flex-shrink-0">06</span>
+                        <span class="text-sm sm:text-base font-medium text-sage-100">Hồ sơ "Tôi là ai – Tôi hướng tới đâu"</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sage-900/60 border border-sage-700 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-amberGold-500/20 text-amberGold-400 flex items-center justify-center font-bold text-xs flex-shrink-0">07</span>
+                        <span class="text-sm sm:text-base font-medium text-sage-100">Bộ nội dung cá nhân đầu tiên</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sage-900/60 border border-sage-700 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-amberGold-500/20 text-amberGold-400 flex items-center justify-center font-bold text-xs flex-shrink-0">08</span>
+                        <span class="text-sm sm:text-base font-medium text-sage-100">Bản đồ sản phẩm cá nhân</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sage-900/60 border border-sage-700 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-amberGold-500/20 text-amberGold-400 flex items-center justify-center font-bold text-xs flex-shrink-0">09</span>
+                        <span class="text-sm sm:text-base font-medium text-sage-100">Sản phẩm phiên bản đầu tiên (v1.0)</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-sage-900/60 border border-sage-700 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-amberGold-500/20 text-amberGold-400 flex items-center justify-center font-bold text-xs flex-shrink-0">10</span>
+                        <span class="text-sm sm:text-base font-medium text-sage-100">Kế hoạch bước ra trao giá trị</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: ĐĂNG KÝ & THÔNG TIN HỌC PHÍ -->
+    <section id="register" class="py-20 bg-sage-100/30 border-t border-sage-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="px-4 py-1.5 rounded-full bg-earth-100 text-earth-800 text-xs font-bold uppercase tracking-wider">Thông Tin Chương Trình</span>
+                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sage-900">Cách Chúng Ta Đồng Hành</h2>
+                    
+                    <div class="space-y-4 text-sm sm:text-base text-earth-800">
+                        <div class="p-5 rounded-2xl bg-white border border-sage-200 flex items-start gap-4">
+                            <i class="fa-solid fa-video text-sage-700 text-xl mt-1"></i>
+                            <div>
+                                <strong class="text-sage-900 block text-base font-bold">01 Buổi Zoom Trực Tiếp Mỗi Tuần:</strong>
+                                <span class="text-sm text-earth-800">Khoảng dừng để Dừng lại &rarr; Nhìn lại &rarr; Chia sẻ &rarr; Thực hành &rarr; Điều chỉnh &rarr; Tiếp tục.</span>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white border border-sage-200 flex items-start gap-4">
+                            <i class="fa-solid fa-toolbox text-sage-700 text-xl mt-1"></i>
+                            <div>
+                                <strong class="text-sage-900 block text-base font-bold">Bộ Công Cụ Thực Hành Xuyên Suốt:</strong>
+                                <span class="text-sm text-earth-800">Bài tập quan sát thực tế trên chính cuộc sống của bạn, không gian phản hồi & theo dõi tiến trình 1-1.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-earth-100 border border-earth-300 text-sm text-earth-900 space-y-2">
+                        <p class="font-bold text-base"><i class="fa-solid fa-calendar-days mr-2"></i>Lịch Khai Giảng:</p>
+                        <p>• Ngày bắt đầu: <strong>06/10/2026</strong></p>
+                        <p>• Thời lượng: <strong>5 Tháng đồng hành liên tục</strong></p>
+                        <p>• Hình thức: <strong>Online qua Zoom & Nhóm Đồng Hành</strong></p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="bg-sage-900 text-white rounded-3xl p-8 shadow-2xl border-2 border-sage-700 space-y-6 text-center">
+                        <span class="text-xs font-bold uppercase tracking-widest text-amberGold-400">Học Phí Trọn Gói 5 Tháng</span>
+                        <div class="py-3 border-y border-sage-800">
+                            <p class="text-4xl font-bold text-amberGold-400">6.999.000 VNĐ</p>
+                            <p class="text-xs text-sage-300 mt-1">Bao gồm 5 tháng Zoom trực tiếp & bộ công cụ thực hành</p>
+                        </div>
+
+                        <div class="text-left bg-sage-800 p-5 rounded-2xl border border-sage-700 space-y-2.5 text-xs sm:text-sm">
+                            <p class="font-bold text-amberGold-400 uppercase text-xs"><i class="fa-solid fa-building-columns mr-1.5"></i> Thông Tin Chuyển Khoản</p>
+                            <div class="flex justify-between"><span class="text-sage-300">Ngân hàng:</span><span class="font-bold text-white">MB Bank</span></div>
+                            <div class="flex justify-between"><span class="text-sage-300">Số tài khoản:</span><span class="font-bold text-amberGold-400 text-base">019228966666</span></div>
+                            <div class="flex justify-between"><span class="text-sage-300">Chủ tài khoản:</span><span class="font-bold text-white">VÕ THANH THIÊN</span></div>
+                            <p class="text-xs text-sage-400 italic pt-2 border-t border-sage-700">(Tài khoản quản trị viên của Trúc)</p>
+                        </div>
+
+                        <button onclick="openModal()" class="w-full py-4 rounded-xl bg-amberGold-500 hover:bg-amberGold-400 text-sage-900 font-bold text-sm uppercase tracking-wider transition-all shadow-lg hover:scale-105">
+                            Đăng Ký Giữ Chỗ
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-sage-900 text-sage-100 py-12 border-t border-sage-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pb-8 border-b border-sage-800">
+                <div class="md:col-span-7 space-y-2 text-center md:text-left">
+                    <span class="font-serif-title text-2xl font-bold text-white">TRÚC VÕ</span>
+                    <p class="text-sm text-sage-300 max-w-lg leading-relaxed">"Bạn không cần từ bỏ gia đình để xây dựng sự nghiệp. Bạn có thể bắt đầu xây dựng con đường riêng từ nền tảng của một cuộc sống cân bằng."</p>
+                </div>
+
+                <div class="md:col-span-5 flex justify-center md:justify-end items-center gap-4">
+                    <a href="https://www.facebook.com/truc.vo.211966?locale=vi_VN" target="_blank" class="w-10 h-10 rounded-full bg-sage-800 text-white flex items-center justify-center hover:bg-earth-600 transition-colors">
+                        <i class="fa-brands fa-facebook-f text-base"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@tracyvo451" target="_blank" class="w-10 h-10 rounded-full bg-earth-700 text-white flex items-center justify-center hover:bg-red-600 transition-colors">
+                        <i class="fa-brands fa-youtube text-base"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 text-center text-xs text-sage-400">
+                © 2026 Trúc Võ - Cân Bằng Năng Lượng – Trao Giá Trị
+            </div>
+        </div>
+    </footer>
+
+    <!-- REGISTRATION MODAL -->
+    <div id="modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-sage-900/70 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative border border-sage-200">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-earth-600 w-8 h-8 rounded-full flex items-center justify-center">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="text-center space-y-1 mb-6">
+                <span class="text-xs font-bold text-earth-600 uppercase tracking-widest">Đăng Ký Hành Trình</span>
+                <h3 class="font-serif-title text-2xl font-bold text-sage-900">5 Tháng Cân Bằng & Trao Giá Trị</h3>
+            </div>
+
+            <form id="reg-form" onsubmit="submitForm(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-sage-900 uppercase mb-1">Họ và Tên</label>
+                    <input type="text" required placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl bg-sage-50 border border-sage-200 text-sm focus:outline-none focus:border-sage-600">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-sage-900 uppercase mb-1">Số Điện Thoại (Zalo)</label>
+                    <input type="tel" required placeholder="0901234567" class="w-full px-4 py-3 rounded-xl bg-sage-50 border border-sage-200 text-sm focus:outline-none focus:border-sage-600">
+                </div>
+
+                <button type="submit" class="w-full py-4 bg-sage-700 hover:bg-earth-600 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition-all shadow-md">
+                    Xác Nhận Đăng Ký
+                </button>
+            </form>
+
+            <div id="modal-success" class="hidden text-center py-6 space-y-3">
+                <div class="w-12 h-12 bg-sage-100 text-sage-700 rounded-full flex items-center justify-center mx-auto text-xl">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h4 class="font-bold text-lg text-sage-900">Gửi Thông Tin Thành Công!</h4>
+                <p class="text-sm text-earth-700">Trúc Võ sẽ liên hệ trực tiếp qua Zalo để xác nhận giữ chỗ cho bạn.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+        const modal = document.getElementById('modal');
+        function openModal() {
+            document.getElementById('reg-form').classList.remove('hidden');
+            document.getElementById('modal-success').classList.add('hidden');
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        function submitForm(e) {
+            e.preventDefault();
+            document.getElementById('reg-form').classList.add('hidden');
+            document.getElementById('modal-success').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
