@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trúc Võ - 3 Tháng Cân Bằng Năng Lượng</title>
+    <title id="site-title">Trúc Võ - 3 Tháng Cân Bằng Năng Lượng</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +45,19 @@
                         amberGold: {
                             400: '#F48FB1',
                             500: '#E91E63',
+                        },
+                        // BẢNG MÀU RIÊNG CHO TRANG 2: VÀNG NHẠT & TRẮNG NGÀ SANG TRỌNG
+                        sunCream: {
+                            50: '#FFFDF5',
+                            100: '#FEF9E7',
+                            200: '#FDF2C7',
+                            300: '#FCE498',
+                            400: '#F7CB59',
+                            500: '#E8B130',
+                            600: '#C99120',
+                            700: '#9E6F18',
+                            800: '#7C5517',
+                            900: '#4D340E',
                         }
                     },
                     fontFamily: {
@@ -118,24 +131,41 @@
     <!-- NAVIGATION HEADER -->
     <nav class="sticky top-0 z-50 w-full glass-panel border-b border-sage-200 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
+            <div class="flex justify-between h-24 items-center">
                 
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 rounded-full bg-sage-700 text-earth-100 flex items-center justify-center font-serif text-2xl font-bold shadow-md group-hover:bg-earth-600 transition-all duration-300">
+                <!-- LOGO & NÚT KHAI TRƯƠNG 13/11 Ở GÓC TRÁI DƯỚI CHỮ TRÚC VÕ -->
+                <div class="flex items-center gap-3">
+                    <a href="#" class="w-12 h-12 rounded-full bg-sage-700 text-earth-100 flex items-center justify-center font-serif text-2xl font-bold shadow-md hover:bg-earth-600 transition-all duration-300">
                         TV
+                    </a>
+                    <div class="flex flex-col items-start">
+                        <a href="#" class="font-serif-title text-2xl font-bold text-sage-900 leading-none hover:text-earth-700 transition-colors">TRÚC VÕ</a>
+                        <span class="text-[10px] tracking-widest text-earth-600 font-bold uppercase mt-0.5">Cân Bằng Năng Lượng & Trao Giá Trị</span>
+                        
+                        <!-- NÚT GIỚI THIỆU 13/11 KHAI TRƯƠNG -->
+                        <button id="btn-1311-toggle" onclick="switchPage()" class="mt-1.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-sunCream-600 to-sunCream-800 text-white text-[11px] font-bold shadow-sm hover:scale-105 transition-all">
+                            <i class="fa-solid fa-sparkles text-[10px] text-sunCream-200"></i>
+                            <span id="btn-1311-text">✨ 13/11 Khai Trương Khóa Mới</span>
+                        </button>
                     </div>
-                    <div class="flex flex-col">
-                        <span class="font-serif-title text-2xl font-bold text-sage-900 leading-none group-hover:text-earth-700 transition-colors">TRÚC VÕ</span>
-                        <span class="text-xs tracking-widest text-earth-600 font-bold uppercase mt-1">Cân Bằng Năng Lượng & Trao Giá Trị</span>
-                    </div>
-                </a>
+                </div>
 
-                <div class="hidden md:flex items-center space-x-8 text-sm font-bold uppercase tracking-wider text-sage-900">
+                <!-- MENU TRANG GỐC -->
+                <div id="nav-menu-original" class="hidden md:flex items-center space-x-8 text-sm font-bold uppercase tracking-wider text-sage-900">
                     <a href="#about" class="hover:text-earth-600 transition-colors">Giới Thiệu</a>
                     <a href="#story" class="hover:text-earth-600 transition-colors">Câu Chuyện</a>
                     <a href="#roadmap" class="hover:text-earth-600 transition-colors">Lộ Trình 3 Tháng</a>
                     <a href="#fit" class="hover:text-earth-600 transition-colors">Đối Tượng</a>
                     <a href="#register" class="hover:text-earth-600 transition-colors">Đăng Ký</a>
+                </div>
+
+                <!-- MENU TRANG 13/11 (TÔNG VÀNG NHẠT) -->
+                <div id="nav-menu-1311" class="hidden text-sm font-bold uppercase tracking-wider text-sunCream-900 space-x-8">
+                    <a href="#sec-intro-1311" class="hover:text-sunCream-600 transition-colors">Giới Thiệu</a>
+                    <a href="#sec-fit-1311" class="hover:text-sunCream-600 transition-colors">Đối Tượng</a>
+                    <a href="#sec-roadmap-1311" class="hover:text-sunCream-600 transition-colors">Lộ Trình 6 Tuần</a>
+                    <a href="#sec-schedule-1311" class="hover:text-sunCream-600 transition-colors">Lịch Zoom</a>
+                    <a href="#sec-register-1311" class="hover:text-sunCream-600 transition-colors">Học Phí</a>
                 </div>
 
                 <div class="hidden sm:flex items-center space-x-4">
@@ -145,7 +175,7 @@
                     <a href="https://www.youtube.com/@tracyvo451" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-earth-100 text-earth-700 flex items-center justify-center hover:bg-red-600 hover:text-white transition-all shadow-sm">
                         <i class="fa-brands fa-youtube text-base"></i>
                     </a>
-                    <a href="#register" class="bg-sage-700 hover:bg-earth-600 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full shadow-md transition-all flex items-center gap-2 hover:scale-105">
+                    <a href="#register" id="header-register-btn" onclick="if(document.getElementById('page-1311').classList.contains('hidden')==false) window.location.hash='#sec-register-1311';" class="bg-sage-700 hover:bg-earth-600 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full shadow-md transition-all flex items-center gap-2 hover:scale-105">
                         <span>Đăng Ký Ngay</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
@@ -160,497 +190,735 @@
         </div>
 
         <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-sage-200 px-6 pt-4 pb-6 space-y-4 shadow-xl">
-            <a href="#about" class="block text-sage-900 font-bold text-base hover:text-earth-600">Giới Thiệu</a>
-            <a href="#story" class="block text-sage-900 font-bold text-base hover:text-earth-600">Câu Chuyện</a>
-            <a href="#roadmap" class="block text-sage-900 font-bold text-base hover:text-earth-600">Lộ Trình 3 Tháng</a>
-            <a href="#fit" class="block text-sage-900 font-bold text-base hover:text-earth-600">Đối Tượng Tham Gia</a>
-            <a href="#register" class="block text-sage-900 font-bold text-base hover:text-earth-600">Học Phí & Đăng Ký</a>
+            <div id="mobile-links-orig" class="space-y-3">
+                <a href="#about" class="block text-sage-900 font-bold text-base hover:text-earth-600">Giới Thiệu</a>
+                <a href="#story" class="block text-sage-900 font-bold text-base hover:text-earth-600">Câu Chuyện</a>
+                <a href="#roadmap" class="block text-sage-900 font-bold text-base hover:text-earth-600">Lộ Trình 3 Tháng</a>
+                <a href="#fit" class="block text-sage-900 font-bold text-base hover:text-earth-600">Đối Tượng Tham Gia</a>
+                <a href="#register" class="block text-sage-900 font-bold text-base hover:text-earth-600">Học Phí & Đăng Ký</a>
+            </div>
+            <div id="mobile-links-1311" class="hidden space-y-3">
+                <a href="#sec-intro-1311" class="block text-sunCream-900 font-bold text-base hover:text-sunCream-600">Giới Thiệu Khoảng Dừng</a>
+                <a href="#sec-fit-1311" class="block text-sunCream-900 font-bold text-base hover:text-sunCream-600">Đối Tượng Tham Gia</a>
+                <a href="#sec-roadmap-1311" class="block text-sunCream-900 font-bold text-base hover:text-sunCream-600">Lộ Trình 6 Tuần</a>
+                <a href="#sec-schedule-1311" class="block text-sunCream-900 font-bold text-base hover:text-sunCream-600">Lịch Đồng Hành Zoom</a>
+                <a href="#sec-register-1311" class="block text-sunCream-900 font-bold text-base hover:text-sunCream-600">Học Phí & Đăng Ký</a>
+            </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section id="about" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sage-100 border border-sage-200 text-sage-800 text-xs font-bold uppercase tracking-wider">
-                        <i class="fa-solid fa-bolt text-amberGold-500"></i>
-                        <span>Chương Trình Thực Chiến 12 Tuần</span>
-                    </div>
-
-                    <h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-bold text-sage-900 leading-tight">
-                        Hành Trình 3 Tháng <br><span class="text-earth-600 italic underline decoration-sage-300 underline-offset-8">Cân Bằng Năng Lượng</span>
-                    </h1>
-
-                    <p class="text-lg sm:text-xl text-earth-800 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                        Nhận diện rò rỉ, thu hồi nội lực & kiến tạo nhịp sống bền vững. Bắt đầu từ việc dừng lại đúng lúc để thiết lập một nhịp sống tự vận hành vững chãi trước mọi giông bão.
-                    </p>
-
-                    <div class="p-6 rounded-2xl glass-card border border-sage-200 shadow-warm max-w-xl mx-auto lg:mx-0 text-left flex items-center gap-5">
-                        <div class="w-16 h-16 rounded-full bg-sage-100 flex-shrink-0 border-2 border-sage-500 overflow-hidden shadow">
-                            <img src="trucvoava.jpg" alt="Trúc Võ" class="w-full h-full object-cover">
+    <!-- TRANG 1: TRANG GỐC GIỮ NGUYÊN MÀU 100% -->
+    <main id="page-original">
+        <!-- HERO SECTION -->
+        <section id="about" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sage-100 border border-sage-200 text-sage-800 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-bolt text-amberGold-500"></i>
+                            <span>Chương Trình Thực Chiến 12 Tuần</span>
                         </div>
-                        <div>
-                            <p class="font-sans font-semibold text-lg text-earth-800 leading-snug">"Năng lượng của bạn thực sự đang đi đâu?"</p>
-                            <p class="text-sm text-sage-800 font-bold mt-1">— <strong class="text-sage-900">Trúc Võ</strong> (Người Đồng Hành)</p>
-                        </div>
-                    </div>
 
-                    <div class="pt-2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#register" class="inline-flex items-center justify-center gap-3 bg-sage-700 hover:bg-earth-600 text-white font-bold text-base px-8 py-4 rounded-full shadow-lg transition-all hover:scale-105">
-                            <span>Đăng Ký Tham Gia Hành Trình</span>
-                            <i class="fa-solid fa-arrow-right text-sm"></i>
-                        </a>
-                        <a href="#story" class="inline-flex items-center justify-center gap-2 bg-earth-100 hover:bg-earth-200 text-earth-800 font-bold text-base px-8 py-4 rounded-full border border-earth-300 transition-all">
-                            <span>Đọc Tâm Sự & Giải Pháp</span>
-                        </a>
-                    </div>
-                </div>
+                        <h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-bold text-sage-900 leading-tight">
+                            Hành Trình 3 Tháng <br><span class="text-earth-600 italic underline decoration-sage-300 underline-offset-8">Cân Bằng Năng Lượng</span>
+                        </h1>
 
-                <div class="lg:col-span-5 flex justify-center relative">
-                    <div class="relative w-full max-w-md">
-                        <div class="relative rounded-3xl p-3 bg-white shadow-warm border border-sage-200 shadow-hover">
-                            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-sage-50">
+                        <p class="text-lg sm:text-xl text-earth-800 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                            Nhận diện rò rỉ, thu hồi nội lực & kiến tạo nhịp sống bền vững. Bắt đầu từ việc dừng lại đúng lúc để thiết lập một nhịp sống tự vận hành vững chãi trước mọi giông bão.
+                        </p>
+
+                        <div class="p-6 rounded-2xl glass-card border border-sage-200 shadow-warm max-w-xl mx-auto lg:mx-0 text-left flex items-center gap-5">
+                            <div class="w-16 h-16 rounded-full bg-sage-100 flex-shrink-0 border-2 border-sage-500 overflow-hidden shadow">
                                 <img src="trucvoava.jpg" alt="Trúc Võ" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-sage-900/80 via-transparent to-transparent"></div>
-                                
-                                <div class="absolute bottom-5 left-5 right-5 glass-panel p-4 rounded-xl text-center border border-white/60">
-                                    <p class="font-serif-title text-2xl font-bold text-sage-900">Trúc Võ</p>
-                                    <p class="text-xs text-earth-800 font-semibold mt-1">Đồng hành tái tạo năng lượng & kiến tạo giá trị cá nhân</p>
+                            </div>
+                            <div>
+                                <p class="font-sans font-semibold text-lg text-earth-800 leading-snug">"Năng lượng của bạn thực sự đang đi đâu?"</p>
+                                <p class="text-sm text-sage-800 font-bold mt-1">— <strong class="text-sage-900">Trúc Võ</strong> (Người Đồng Hành)</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#register" class="inline-flex items-center justify-center gap-3 bg-sage-700 hover:bg-earth-600 text-white font-bold text-base px-8 py-4 rounded-full shadow-lg transition-all hover:scale-105">
+                                <span>Đăng Ký Tham Gia Hành Trình</span>
+                                <i class="fa-solid fa-arrow-right text-sm"></i>
+                            </a>
+                            <a href="#story" class="inline-flex items-center justify-center gap-2 bg-earth-100 hover:bg-earth-200 text-earth-800 font-bold text-base px-8 py-4 rounded-full border border-earth-300 transition-all">
+                                <span>Đọc Tâm Sự & Giải Pháp</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 flex justify-center relative">
+                        <div class="relative w-full max-w-md">
+                            <div class="relative rounded-3xl p-3 bg-white shadow-warm border border-sage-200 shadow-hover">
+                                <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-sage-50">
+                                    <img src="trucvoava.jpg" alt="Trúc Võ" class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-sage-900/80 via-transparent to-transparent"></div>
+                                    
+                                    <div class="absolute bottom-5 left-5 right-5 glass-panel p-4 rounded-xl text-center border border-white/60">
+                                        <p class="font-serif-title text-2xl font-bold text-sage-900">Trúc Võ</p>
+                                        <p class="text-xs text-earth-800 font-semibold mt-1">Đồng hành tái tạo năng lượng & kiến tạo giá trị cá nhân</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: CÂU CHUYỆN / VẤN ĐỀ -->
-    <section id="story" class="py-20 bg-white/70 border-y border-sage-200/50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-            <div class="text-center space-y-3">
-                <span class="px-4 py-1.5 rounded-full bg-sage-100 text-sage-800 text-xs font-bold uppercase tracking-wider">Thấu Hiểu Nội Tâm</span>
-                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sage-900">
-                    Có bao giờ bạn tự hỏi: Mình biết rất nhiều, nhưng tại sao năng lượng vẫn kiệt quệ?
-                </h2>
-            </div>
-
-            <div class="glass-card p-8 sm:p-10 rounded-3xl border border-sage-200 shadow-warm space-y-6 text-earth-800 text-base sm:text-lg leading-relaxed">
-                <p class="font-medium text-sage-900 italic border-l-4 border-sage-600 pl-4 py-1">
-                    "Bạn hiểu rõ về chánh niệm, biết cách hít thở sâu, thậm chí có thể tư vấn gỡ rối cực kỳ sắc sảo cho người khác. Nhưng ngặt một nỗi, cứ hễ đối diện với áp lực công việc dồn dập, hay những mỏi mệt không tên dưới mái nhà vào cuối ngày, mọi tri thức bỗng chốc bay biến. Bạn lại rơi vào trạng thái cạn kiệt, cáu gắt, rồi tự trách mình: Tại sao mình biết nhiều thế mà vẫn không tự cứu nổi cảm xúc của chính mình?"
-                </p>
-
-                <ul class="space-y-4 pt-2">
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-circle-xmark text-earth-600 mt-1.5 flex-shrink-0"></i>
-                        <span>Buổi sáng, bạn bước ra ngoài với một danh sách mục tiêu dài dằng dặc, cố gắng duy trì vẻ ngoài chuyên nghiệp và năng suất. Nhưng bên trong, năng lượng đã rò rỉ từ lúc nào. Đến chiều tối, bạn lê tấm thân kiệt quệ về nhà, đối mặt với sự bộn bề quen thuộc, và ngọn lửa giận dữ bùng phát chỉ vì một chuyện cỏn con.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-circle-xmark text-earth-600 mt-1.5 flex-shrink-0"></i>
-                        <span>Để rồi khi đêm xuống, trong căn phòng tối, bạn chìm vào sự hối hận, bất lực nuốt ngược vào trong và tự hỏi: <em>"Liệu mình cứ phải gồng gánh và cạn kiệt thế này đến bao giờ?"</em></span>
-                    </li>
-                </ul>
-
-                <div class="p-6 rounded-2xl bg-sage-50 border border-sage-200 space-y-3 mt-4 text-earth-900">
-                    <p class="font-bold text-lg text-sage-900"><i class="fa-solid fa-lightbulb text-amberGold-500 mr-2"></i> Sự thật là:</p>
-                    <p class="font-medium">Vấn đề của bạn không nằm ở chỗ bạn thiếu kiến thức hay thiếu tư duy tích cực. Bạn không cần phải học thêm một cuốn sách phát triển bản thân nào nữa. Điều bạn đang thiếu là một <strong>hệ thống vận hành năng lượng thực tế</strong> – nơi bạn học cách đo lường dòng chảy bên trong, bịt lại những lỗ rò rỉ vô thức, và thiết lập một nhịp sống đủ bền bỉ để đi đường dài mà không phải vắt kiệt chính mình.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECTION: LỘ TRÌNH 3 THÁNG & 12 TUẦN (CÓ ACCORDION MƯỢT MÀ) -->
-    <section id="roadmap" class="py-20 bg-sage-100/40 border-b border-sage-200/60">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto space-y-3 mb-14">
-                <span class="px-4 py-1.5 rounded-full bg-sage-200 text-sage-800 text-xs font-bold uppercase tracking-wider">Hành Trình Từng Bước</span>
-                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sage-900">
-                    Bản Đồ Chuyển Hóa 3 Tháng (12 Tuần Thực Hành)
-                </h2>
-                <p class="text-earth-800 text-base sm:text-lg">
-                    Chương trình được thiết kế theo tiến trình tự nhiên gồm 3 giai đoạn cốt lõi: Nhận diện &rarr; Thu hồi &rarr; Cân bằng. Nhấp vào từng tháng để xem chi tiết nội dung tuần.
-                </p>
-            </div>
-
-            <div class="space-y-6">
-                
-                <!-- THÁNG 1 -->
-                <div class="bg-white rounded-3xl border border-sage-200 shadow-warm overflow-hidden transition-all">
-                    <button onclick="toggleAccordion('month-1')" class="w-full p-6 sm:p-8 flex items-center justify-between text-left focus:outline-none hover:bg-sage-50/50 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <span class="w-12 h-12 rounded-2xl bg-sage-700 text-white flex items-center justify-center font-bold text-base shadow">T1</span>
-                            <div>
-                                <h3 class="font-serif-title text-2xl font-bold text-sage-900">THÁNG 1: NHẬN DIỆN</h3>
-                                <p class="text-sm text-earth-700 font-medium">Đo lường & Làm rõ dòng chảy năng lượng</p>
-                            </div>
-                        </div>
-                        <i id="icon-month-1" class="fa-solid fa-chevron-down text-sage-700 text-xl transition-transform duration-300"></i>
-                    </button>
-
-                    <div id="month-1" class="accordion-content px-6 sm:px-8 pb-8 text-earth-800 space-y-6 border-t border-sage-100 pt-6">
-                        <p class="text-sm sm:text-base italic text-earth-700"><strong>Mục tiêu:</strong> Giúp bạn nhìn thấy bức tranh thực tế về biến động năng lượng, kết nối lại với cảm xúc và phát hiện chính xác các "lỗ rò rỉ".</p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
-                                <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 1</span>
-                                <h4 class="font-bold text-sage-900 text-base">Nhật ký Mẫu 7 ngày (7-Day Energy Baseline)</h4>
-                                <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Đo lường nhịp biến động năng lượng theo 4 mốc thời gian trong ngày (Sáng/Trưa/Chiều/Tối) trên thang điểm 1–10 mà không phán xét.</p>
-                                <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bảng đo lường chỉ số năng lượng nền tảng 7 ngày.</p>
-                            </div>
-
-                            <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
-                                <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 2</span>
-                                <h4 class="font-bold text-sage-900 text-base">Bảng Phân loại Dòng chảy (Energy In vs. Out)</h4>
-                                <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Bóc tách các hoạt động hằng ngày thành 2 nhóm: Nhóm Rút năng lượng (Drainers) vs. Nhóm Nạp năng lượng (Fillers). Gọi tên các thói quen nạp năng lượng độc hại.</p>
-                                <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bảng phân loại chi tiết Dòng chảy Năng lượng.</p>
-                            </div>
-
-                            <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
-                                <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 3</span>
-                                <h4 class="font-bold text-sage-900 text-base">Ma trận NL Trước & Sau Sự kiện (Event Energy Matrix)</h4>
-                                <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Nhận diện các điểm kích hoạt (triggers), mối quan hệ hoặc bối cảnh khiến năng lượng tụt hoặc tăng đột ngột.</p>
-                                <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bảng đánh giá biến động năng lượng từ các sự kiện trọng yếu.</p>
-                            </div>
-
-                            <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
-                                <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 4</span>
-                                <h4 class="font-bold text-sage-900 text-base">Khung Bản đồ Năng lượng Cá nhân (Personal Energy Map)</h4>
-                                <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Tổng hợp dữ liệu vào 4 phân vùng cốt lõi: Thể chất – Cảm xúc – Tâm trí – Tinh thần.</p>
-                                <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Sản phẩm đầu ra Tháng 1: <strong>01 Bản đồ Năng lượng 4 Phân vùng + Top 3 Lỗ rò rỉ & Top 3 Nguồn nạp hiệu quả.</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- THÁNG 2 -->
-                <div class="bg-white rounded-3xl border border-sage-200 shadow-warm overflow-hidden transition-all">
-                    <button onclick="toggleAccordion('month-2')" class="w-full p-6 sm:p-8 flex items-center justify-between text-left focus:outline-none hover:bg-sage-50/50 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <span class="w-12 h-12 rounded-2xl bg-earth-600 text-white flex items-center justify-center font-bold text-base shadow">T2</span>
-                            <div>
-                                <h3 class="font-serif-title text-2xl font-bold text-sage-900">THÁNG 2: THU HỒI</h3>
-                                <p class="text-sm text-earth-700 font-medium">Tập trung năng lượng vào điều quan trọng</p>
-                            </div>
-                        </div>
-                        <i id="icon-month-2" class="fa-solid fa-chevron-down text-earth-600 text-xl transition-transform duration-300"></i>
-                    </button>
-
-                    <div id="month-2" class="accordion-content px-6 sm:px-8 pb-8 text-earth-800 space-y-6 border-t border-sage-100 pt-6">
-                        <p class="text-sm sm:text-base italic text-earth-700"><strong>Mục tiêu:</strong> Cắt giảm sự phân tán, học cách dừng lại, từ chối và bảo vệ 3 ưu tiên cốt lõi trong cuộc sống.</p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="p-5 rounded-2xl bg-pink-50/50 border border-pink-100 space-y-2">
-                                <span class="text-xs font-bold text-earth-700 uppercase tracking-wide">Tuần 5</span>
-                                <h4 class="font-bold text-sage-900 text-base">Nhật ký Phân tán Năng lượng (Energy Dispersion Log)</h4>
-                                <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Bóc tách các bẫy tâm lý gây rò rỉ năng lượng ngầm: hội chứng sợ bỏ lỡ (FOMO), sợ từ chối, ôm đồm việc không thuộc trách nhiệm, cầu toàn thái quá.</p>
-                                <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bảng bóc tách 3 bẫy vô thức gây xao nhãng & ôm đồm.</p>
-                            </div>
-
-                            <div class="p-5 rounded-2xl bg-pink-50/50 border border-pink-100 space-y-2">
-                                <span class="text-xs font-bold text-earth-700 uppercase tracking-wide">Tuần 6</span>
-                                <h4 class="font-bold text-sage-900 text-base">Bản đồ 3 Trọng tâm Sống (3-Focus Map)</h4>
-                                <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Sử dụng phương pháp loại trừ để chọn ra đúng 03 ngọn hải đăng ưu tiên tuyệt đối trong mùa này của cuộc đời (Công việc – Sức khỏe/Bản thân – Gia đình).</p>
-                                <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bản đồ 3 Trọng tâm Sống.</p>
-                            </div>
-
-                            <div class="p-5 rounded-2xl bg-pink-50/50 border border-pink-100 space-y-2">
-                                <span class="text-xs font-bold text-earth-700 uppercase tracking-wide">Tuần 7</span>
-                                <h4 class="font-bold text-sage-900 text-base">Ma trận Giữ – Giảm – Buông – Đầu tư (K-R-R-I Matrix)</h4>
-                                <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Phân loại toàn bộ công việc/mối quan hệ vào 4 nhóm. Thực thi ngay hành động thiết lập ranh giới thực tế.</p>
-                                <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bảng cam kết <strong>thực thi ngay 01 việc BUÔNG</strong> và <strong>01 việc GIẢM</strong> ngay trong tuần.</p>
-                            </div>
-
-                            <div class="p-5 rounded-2xl bg-pink-50/50 border border-pink-100 space-y-2">
-                                <span class="text-xs font-bold text-earth-700 uppercase tracking-wide">Tuần 8</span>
-                                <h4 class="font-bold text-sage-900 text-base">Kế hoạch Bảo vệ Ranh giới (Focus Protection Plan)</h4>
-                                <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Thiết lập bộ kịch bản ứng phó theo công thức "Nếu... Thì..." để bảo vệ 3 trọng tâm khi bị hoàn cảnh hoặc người khác xâm phạm.</p>
-                                <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Sản phẩm đầu ra Tháng 2: <strong>Bộ kịch bản ứng phó ranh giới thực tế để bảo vệ 3 trọng tâm sống.</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- THÁNG 3 -->
-                <div class="bg-white rounded-3xl border border-sage-200 shadow-warm overflow-hidden transition-all">
-                    <button onclick="toggleAccordion('month-3')" class="w-full p-6 sm:p-8 flex items-center justify-between text-left focus:outline-none hover:bg-sage-50/50 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <span class="w-12 h-12 rounded-2xl bg-sage-800 text-white flex items-center justify-center font-bold text-base shadow">T3</span>
-                            <div>
-                                <h3 class="font-serif-title text-2xl font-bold text-sage-900">THÁNG 3: CÂN BẰNG</h3>
-                                <p class="text-sm text-earth-700 font-medium">Thiết kế nhịp sống đường dài</p>
-                            </div>
-                        </div>
-                        <i id="icon-month-3" class="fa-solid fa-chevron-down text-sage-800 text-xl transition-transform duration-300"></i>
-                    </button>
-
-                    <div id="month-3" class="accordion-content px-6 sm:px-8 pb-8 text-earth-800 space-y-6 border-t border-sage-100 pt-6">
-                        <p class="text-sm sm:text-base italic text-earth-700"><strong>Mục tiêu:</strong> Tích hợp khoảng nghỉ sinh học, loại bỏ áp lực cầu toàn và đóng gói khung nhịp sống tự vận hành bền vững.</p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
-                                <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 9</span>
-                                <h4 class="font-bold text-sage-900 text-base">Khung Nhịp sống Sinh học (Personal Rhythm Canvas)</h4>
-                                <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Phân bổ công việc theo nhịp năng lượng sinh học tự nhiên (Đỉnh - Trung bình - Thấp) thay vì chia giờ cứng nhắc.</p>
-                                <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Sơ đồ phân bổ hoạt động theo nhịp sinh học cá nhân.</p>
-                            </div>
-
-                            <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
-                                <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 10</span>
-                                <h4 class="font-bold text-sage-900 text-base">Bảng Thiết kế Khoảng trống (White Space Tracker)</h4>
-                                <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Chủ động đưa các khoảng dừng tái tạo năng lượng vào lịch trình hằng ngày và hằng tuần (Micro - Meso - Macro recovery).</p>
-                                <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bảng lịch trình bảo vệ 3 khoảng trống phục hồi.</p>
-                            </div>
-
-                            <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
-                                <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 11</span>
-                                <h4 class="font-bold text-sage-900 text-base">Bộ Quy trình Ứng phó Khẩn cấp (Emergency Protocol)</h4>
-                                <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Kích hoạt chế độ "Sinh tồn" và tiêu chuẩn "Đủ tốt" khi năng lượng tụt xuống dưới mức 4/10 để tránh sụp đổ/kiệt quệ.</p>
-                                <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bộ thẻ quy trình ứng phó khẩn cấp khi quá tải.</p>
-                            </div>
-
-                            <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
-                                <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 12</span>
-                                <h4 class="font-bold text-sage-900 text-base">Đóng gói Nhịp sống Đường dài (Life Rhythm Design)</h4>
-                                <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Tích hợp nhịp sống mới vào 4 trụ cột cuộc sống (Bản thân – Mối quan hệ – Công việc – Sự nghiệp riêng). Tổng kết báo cáo chuyển hóa.</p>
-                                <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Sản phẩm đầu ra Tháng 3: <strong>Bộ Cẩm nang Nhịp sống Cá nhân (Personal Energy Toolkit) vận hành trọn đời.</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="mt-8 p-6 rounded-2xl bg-white border border-sage-200 text-center text-sm sm:text-base text-earth-800 shadow-sm">
-                <i class="fa-solid fa-award text-amberGold-500 mr-2 text-xl"></i>
-                <strong>Đặc quyền Đánh giá Định kỳ:</strong> Cứ sau mỗi tháng thực hành, bạn sẽ nhận được 1 Bảng Tự Phản Chiếu (Reflection Sheet) để định vị rõ dịch chuyển và được Trúc trực tiếp gỡ rối 1-1.
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: ĐỐI TƯỢNG (AI NÊN & KHÔNG NÊN THAM GIA) -->
-    <section id="fit" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
-                <span class="px-4 py-1.5 rounded-full bg-pink-100 text-sage-700 text-xs font-bold uppercase tracking-wider">Chân Dung Học Viên</span>
-                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sage-900">
-                    Chương Trình Này Dành Cho Ai?
-                </h2>
-                <p class="text-earth-700 text-sm sm:text-base">Hãy thành thật với chính mình trước khi đăng ký tham gia.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- DÀNH CHO BẠN -->
-                <div class="bg-sage-50/70 p-8 rounded-3xl border border-sage-200 shadow-sm space-y-5">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-sage-700 text-white flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <h3 class="font-serif-title text-2xl font-bold text-sage-900">Thực sự DÀNH CHO BẠN nếu:</h3>
-                    </div>
-
-                    <ul class="space-y-4 text-sm sm:text-base text-earth-800">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-sage-700 mt-1 flex-shrink-0"></i>
-                            <span>Bạn là phụ nữ (30–45 tuổi) đang gặp tình trạng kiệt sức ẩn (High-functioning Burnout): công việc vẫn tốt nhưng bên trong luôn ngột ngạt, bất an và cạn kiệt năng lượng.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-sage-700 mt-1 flex-shrink-0"></i>
-                            <span>Bạn cảm thấy 24 giờ không đủ dùng, ôm đồm nhiều việc, khó nói lời từ chối và muốn xây dựng ranh giới sống vững chãi.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-sage-700 mt-1 flex-shrink-0"></i>
-                            <span>Bạn đã chán nản với các phương pháp quản lý thời gian cứng nhắc và muốn chuyển sang quản lý năng lượng sinh học bền vững.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-sage-700 mt-1 flex-shrink-0"></i>
-                            <span>Bạn sẵn sàng cam kết dành ra 10–15 phút mỗi ngày để làm bài tập tự vấn và tương tác cùng Trúc.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- KHÔNG DÀNH CHO BẠN -->
-                <div class="bg-pink-50/50 p-8 rounded-3xl border border-pink-200/80 shadow-sm space-y-5">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-earth-600 text-white flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-xmark"></i>
-                        </div>
-                        <h3 class="font-serif-title text-2xl font-bold text-sage-900">KHÔNG DÀNH CHO BẠN nếu:</h3>
-                    </div>
-
-                    <ul class="space-y-4 text-sm sm:text-base text-earth-800">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-xmark text-earth-600 mt-1 flex-shrink-0"></i>
-                            <span>Bạn đang gặp các vấn đề tâm lý/y tế lâm sàng nặng cần sự can thiệp của bác sĩ chuyên khoa.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-xmark text-earth-600 mt-1 flex-shrink-0"></i>
-                            <span>Bạn tìm kiếm giải pháp "thành công nhanh", muốn biến đổi thần tốc sau 1 đêm mà không muốn bỏ thời gian quan sát và tự gỡ rối.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-xmark text-earth-600 mt-1 flex-shrink-0"></i>
-                            <span>Bạn ngại chạm vào các góc khuất của bản thân, không cam kết thực hành bài tập tuần và cần người khác thúc ép, dỗ dành.</span>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: BỘ HỒ SƠ 10 MÓN ĐẦU RA -->
-    <section id="deliverables" class="py-20 bg-pink-50/40 border-y border-pink-200/50">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white text-earth-900 rounded-3xl p-8 sm:p-14 shadow-warm border border-pink-200/80 text-center">
-                
-                <div class="max-w-2xl mx-auto space-y-3 mb-10">
-                    <span class="px-4 py-1.5 rounded-full bg-pink-100 text-sage-700 text-xs font-bold uppercase tracking-wider inline-block">
-                        Thành Quả Sau 3 Tháng
-                    </span>
+        <!-- SECTION: CÂU CHUYỆN / VẤN ĐỀ -->
+        <section id="story" class="py-20 bg-white/70 border-y border-sage-200/50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                <div class="text-center space-y-3">
+                    <span class="px-4 py-1.5 rounded-full bg-sage-100 text-sage-800 text-xs font-bold uppercase tracking-wider">Thấu Hiểu Nội Tâm</span>
                     <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sage-900">
-                        10 Sản Phẩm Đầu Ra & Bộ Cẩm Nang Thực Tế
+                        Có bao giờ bạn tự hỏi: Mình biết rất nhiều, nhưng tại sao năng lượng vẫn kiệt quệ?
                     </h2>
-                    <p class="text-sm sm:text-base text-earth-700">
-                        Trong suốt hành trình, bạn không chỉ học lý thuyết mà sẽ hoàn thiện trọn bộ công cụ vận hành nhịp sống thực tế cho riêng mình:
+                </div>
+
+                <div class="glass-card p-8 sm:p-10 rounded-3xl border border-sage-200 shadow-warm space-y-6 text-earth-800 text-base sm:text-lg leading-relaxed">
+                    <p class="font-medium text-sage-900 italic border-l-4 border-sage-600 pl-4 py-1">
+                        "Bạn hiểu rõ về chánh niệm, biết cách hít thở sâu, thậm chí có thể tư vấn gỡ rối cực kỳ sắc sảo cho người khác. Nhưng ngặt một nỗi, cứ hễ đối diện với áp lực công việc dồn dập, hay những mỏi mệt không tên dưới mái nhà vào cuối ngày, mọi tri thức bỗng chốc bay biến. Bạn lại rơi vào trạng thái cạn kiệt, cáu gắt, rồi tự trách mình: Tại sao mình biết nhiều thế mà vẫn không tự cứu nổi cảm xúc của chính mình?"
+                    </p>
+
+                    <ul class="space-y-4 pt-2">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-earth-600 mt-1.5 flex-shrink-0"></i>
+                            <span>Buổi sáng, bạn bước ra ngoài với một danh sách mục tiêu dài dằng dặc, cố gắng duy trì vẻ ngoài chuyên nghiệp và năng suất. Nhưng bên trong, năng lượng đã rò rỉ từ lúc nào. Đến chiều tối, bạn lê tấm thân kiệt quệ về nhà, đối mặt với sự bộn bề quen thuộc, và ngọn lửa giận dữ bùng phát chỉ vì một chuyện cỏn con.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-earth-600 mt-1.5 flex-shrink-0"></i>
+                            <span>Để rồi khi đêm xuống, trong căn phòng tối, bạn chìm vào sự hối hận, bất lực nuốt ngược vào trong và tự hỏi: <em>"Liệu mình cứ phải gồng gánh và cạn kiệt thế này đến bao giờ?"</em></span>
+                        </li>
+                    </ul>
+
+                    <div class="p-6 rounded-2xl bg-sage-50 border border-sage-200 space-y-3 mt-4 text-earth-900">
+                        <p class="font-bold text-lg text-sage-900"><i class="fa-solid fa-lightbulb text-amberGold-500 mr-2"></i> Sự thật là:</p>
+                        <p class="font-medium">Vấn đề của bạn không nằm ở chỗ bạn thiếu kiến thức hay thiếu tư duy tích cực. Bạn không cần phải học thêm một cuốn sách phát triển bản thân nào nữa. Điều bạn đang thiếu là một <strong>hệ thống vận hành năng lượng thực tế</strong> – nơi bạn học cách đo lường dòng chảy bên trong, bịt lại những lỗ rò rỉ vô thức, và thiết lập một nhịp sống đủ bền bỉ để đi đường dài mà không phải vắt kiệt chính mình.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: LỘ TRÌNH 3 THÁNG & 12 TUẦN -->
+        <section id="roadmap" class="py-20 bg-sage-100/40 border-b border-sage-200/60">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-3 mb-14">
+                    <span class="px-4 py-1.5 rounded-full bg-sage-200 text-sage-800 text-xs font-bold uppercase tracking-wider">Hành Trình Từng Bước</span>
+                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sage-900">
+                        Bản Đồ Chuyển Hóa 3 Tháng (12 Tuần Thực Hành)
+                    </h2>
+                    <p class="text-earth-800 text-base sm:text-lg">
+                        Chương trình được thiết kế theo tiến trình tự nhiên gồm 3 giai đoạn cốt lõi: Nhận diện &rarr; Thu hồi &rarr; Cân bằng. Nhấp vào từng tháng để xem chi tiết nội dung tuần.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                <div class="space-y-6">
                     
-                    <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3 hover:border-pink-300 transition-colors">
-                        <span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">01</span>
-                        <span class="text-sm sm:text-base font-medium text-earth-900">Bảng đo lường chỉ số năng lượng nền tảng 7 ngày</span>
+                    <!-- THÁNG 1 -->
+                    <div class="bg-white rounded-3xl border border-sage-200 shadow-warm overflow-hidden transition-all">
+                        <button onclick="toggleAccordion('month-1')" class="w-full p-6 sm:p-8 flex items-center justify-between text-left focus:outline-none hover:bg-sage-50/50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <span class="w-12 h-12 rounded-2xl bg-sage-700 text-white flex items-center justify-center font-bold text-base shadow">T1</span>
+                                <div>
+                                    <h3 class="font-serif-title text-2xl font-bold text-sage-900">THÁNG 1: NHẬN DIỆN</h3>
+                                    <p class="text-sm text-earth-700 font-medium">Đo lường & Làm rõ dòng chảy năng lượng</p>
+                                </div>
+                            </div>
+                            <i id="icon-month-1" class="fa-solid fa-chevron-down text-sage-700 text-xl transition-transform duration-300"></i>
+                        </button>
+
+                        <div id="month-1" class="accordion-content px-6 sm:px-8 pb-8 text-earth-800 space-y-6 border-t border-sage-100 pt-6">
+                            <p class="text-sm sm:text-base italic text-earth-700"><strong>Mục tiêu:</strong> Giúp bạn nhìn thấy bức tranh thực tế về biến động năng lượng, kết nối lại với cảm xúc và phát hiện chính xác các "lỗ rò rỉ".</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
+                                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 1</span>
+                                    <h4 class="font-bold text-sage-900 text-base">Nhật ký Mẫu 7 ngày (7-Day Energy Baseline)</h4>
+                                    <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Đo lường nhịp biến động năng lượng theo 4 mốc thời gian trong ngày (Sáng/Trưa/Chiều/Tối) trên thang điểm 1–10 mà không phán xét.</p>
+                                    <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bảng đo lường chỉ số năng lượng nền tảng 7 ngày.</p>
+                                </div>
+
+                                <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
+                                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 2</span>
+                                    <h4 class="font-bold text-sage-900 text-base">Bảng Phân loại Dòng chảy (Energy In vs. Out)</h4>
+                                    <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Bóc tách các hoạt động hằng ngày thành 2 nhóm: Nhóm Rút năng lượng (Drainers) vs. Nhóm Nạp năng lượng (Fillers). Gọi tên các thói quen nạp năng lượng độc hại.</p>
+                                    <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bảng phân loại chi tiết Dòng chảy Năng lượng.</p>
+                                </div>
+
+                                <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
+                                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 3</span>
+                                    <h4 class="font-bold text-sage-900 text-base">Ma trận NL Trước & Sau Sự kiện (Event Energy Matrix)</h4>
+                                    <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Nhận diện các điểm kích hoạt (triggers), mối quan hệ hoặc bối cảnh khiến năng lượng tụt hoặc tăng đột ngột.</p>
+                                    <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bảng đánh giá biến động năng lượng từ các sự kiện trọng yếu.</p>
+                                </div>
+
+                                <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
+                                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 4</span>
+                                    <h4 class="font-bold text-sage-900 text-base">Khung Bản đồ Năng lượng Cá nhân (Personal Energy Map)</h4>
+                                    <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Tổng hợp dữ liệu vào 4 phân vùng cốt lõi: Thể chất – Cảm xúc – Tâm trí – Tinh thần.</p>
+                                    <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Sản phẩm đầu ra Tháng 1: <strong>01 Bản đồ Năng lượng 4 Phân vùng + Top 3 Lỗ rò rỉ & Top 3 Nguồn nạp hiệu quả.</strong></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3 hover:border-pink-300 transition-colors">
-                        <span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">02</span>
-                        <span class="text-sm sm:text-base font-medium text-earth-900">Bảng phân loại chi tiết Dòng chảy Năng lượng</span>
+                    <!-- THÁNG 2 -->
+                    <div class="bg-white rounded-3xl border border-sage-200 shadow-warm overflow-hidden transition-all">
+                        <button onclick="toggleAccordion('month-2')" class="w-full p-6 sm:p-8 flex items-center justify-between text-left focus:outline-none hover:bg-sage-50/50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <span class="w-12 h-12 rounded-2xl bg-earth-600 text-white flex items-center justify-center font-bold text-base shadow">T2</span>
+                                <div>
+                                    <h3 class="font-serif-title text-2xl font-bold text-sage-900">THÁNG 2: THU HỒI</h3>
+                                    <p class="text-sm text-earth-700 font-medium">Tập trung năng lượng vào điều quan trọng</p>
+                                </div>
+                            </div>
+                            <i id="icon-month-2" class="fa-solid fa-chevron-down text-earth-600 text-xl transition-transform duration-300"></i>
+                        </button>
+
+                        <div id="month-2" class="accordion-content px-6 sm:px-8 pb-8 text-earth-800 space-y-6 border-t border-sage-100 pt-6">
+                            <p class="text-sm sm:text-base italic text-earth-700"><strong>Mục tiêu:</strong> Cắt giảm sự phân tán, học cách dừng lại, từ chối và bảo vệ 3 ưu tiên cốt lõi trong cuộc sống.</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="p-5 rounded-2xl bg-pink-50/50 border border-pink-100 space-y-2">
+                                    <span class="text-xs font-bold text-earth-700 uppercase tracking-wide">Tuần 5</span>
+                                    <h4 class="font-bold text-sage-900 text-base">Nhật ký Phân tán Năng lượng (Energy Dispersion Log)</h4>
+                                    <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Bóc tách các bẫy tâm lý gây rò rỉ năng lượng ngầm: hội chứng sợ bỏ lỡ (FOMO), sợ từ chối, ôm đồm việc không thuộc trách nhiệm, cầu toàn thái quá.</p>
+                                    <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bảng bóc tách 3 bẫy vô thức gây xao nhãng & ôm đồm.</p>
+                                </div>
+
+                                <div class="p-5 rounded-2xl bg-pink-50/50 border border-pink-100 space-y-2">
+                                    <span class="text-xs font-bold text-earth-700 uppercase tracking-wide">Tuần 6</span>
+                                    <h4 class="font-bold text-sage-900 text-base">Bản đồ 3 Trọng tâm Sống (3-Focus Map)</h4>
+                                    <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Sử dụng phương pháp loại trừ để chọn ra đúng 03 ngọn hải đăng ưu tiên tuyệt đối trong mùa này của cuộc đời (Công việc – Sức khỏe/Bản thân – Gia đình).</p>
+                                    <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bản đồ 3 Trọng tâm Sống.</p>
+                                </div>
+
+                                <div class="p-5 rounded-2xl bg-pink-50/50 border border-pink-100 space-y-2">
+                                    <span class="text-xs font-bold text-earth-700 uppercase tracking-wide">Tuần 7</span>
+                                    <h4 class="font-bold text-sage-900 text-base">Ma trận Giữ – Giảm – Buông – Đầu tư (K-R-R-I Matrix)</h4>
+                                    <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Phân loại toàn bộ công việc/mối quan hệ vào 4 nhóm. Thực thi ngay hành động thiết lập ranh giới thực tế.</p>
+                                    <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bảng cam kết <strong>thực thi ngay 01 việc BUÔNG</strong> và <strong>01 việc GIẢM</strong> ngay trong tuần.</p>
+                                </div>
+
+                                <div class="p-5 rounded-2xl bg-pink-50/50 border border-pink-100 space-y-2">
+                                    <span class="text-xs font-bold text-earth-700 uppercase tracking-wide">Tuần 8</span>
+                                    <h4 class="font-bold text-sage-900 text-base">Kế hoạch Bảo vệ Ranh giới (Focus Protection Plan)</h4>
+                                    <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Thiết lập bộ kịch bản ứng phó theo công thức "Nếu... Thì..." để bảo vệ 3 trọng tâm khi bị hoàn cảnh hoặc người khác xâm phạm.</p>
+                                    <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Sản phẩm đầu ra Tháng 2: <strong>Bộ kịch bản ứng phó ranh giới thực tế để bảo vệ 3 trọng tâm sống.</strong></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3 hover:border-pink-300 transition-colors">
-                        <span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">03</span>
-                        <span class="text-sm sm:text-base font-medium text-earth-900">01 Bản đồ Năng lượng 4 Phân vùng</span>
+                    <!-- THÁNG 3 -->
+                    <div class="bg-white rounded-3xl border border-sage-200 shadow-warm overflow-hidden transition-all">
+                        <button onclick="toggleAccordion('month-3')" class="w-full p-6 sm:p-8 flex items-center justify-between text-left focus:outline-none hover:bg-sage-50/50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <span class="w-12 h-12 rounded-2xl bg-sage-800 text-white flex items-center justify-center font-bold text-base shadow">T3</span>
+                                <div>
+                                    <h3 class="font-serif-title text-2xl font-bold text-sage-900">THÁNG 3: CÂN BẰNG</h3>
+                                    <p class="text-sm text-earth-700 font-medium">Thiết kế nhịp sống đường dài</p>
+                                </div>
+                            </div>
+                            <i id="icon-month-3" class="fa-solid fa-chevron-down text-sage-800 text-xl transition-transform duration-300"></i>
+                        </button>
+
+                        <div id="month-3" class="accordion-content px-6 sm:px-8 pb-8 text-earth-800 space-y-6 border-t border-sage-100 pt-6">
+                            <p class="text-sm sm:text-base italic text-earth-700"><strong>Mục tiêu:</strong> Tích hợp khoảng nghỉ sinh học, loại bỏ áp lực cầu toàn và đóng gói khung nhịp sống tự vận hành bền vững.</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
+                                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 9</span>
+                                    <h4 class="font-bold text-sage-900 text-base">Khung Nhịp sống Sinh học (Personal Rhythm Canvas)</h4>
+                                    <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Phân bổ công việc theo nhịp năng lượng sinh học tự nhiên (Đỉnh - Trung bình - Thấp) thay vì chia giờ cứng nhắc.</p>
+                                    <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Sơ đồ phân bổ hoạt động theo nhịp sinh học cá nhân.</p>
+                                </div>
+
+                                <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
+                                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 10</span>
+                                    <h4 class="font-bold text-sage-900 text-base">Bảng Thiết kế Khoảng trống (White Space Tracker)</h4>
+                                    <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Chủ động đưa các khoảng dừng tái tạo năng lượng vào lịch trình hằng ngày và hằng tuần (Micro - Meso - Macro recovery).</p>
+                                    <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bảng lịch trình bảo vệ 3 khoảng trống phục hồi.</p>
+                                </div>
+
+                                <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
+                                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 11</span>
+                                    <h4 class="font-bold text-sage-900 text-base">Bộ Quy trình Ứng phó Khẩn cấp (Emergency Protocol)</h4>
+                                    <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Kích hoạt chế độ "Sinh tồn" và tiêu chuẩn "Đủ tốt" khi năng lượng tụt xuống dưới mức 4/10 để tránh sụp đổ/kiệt quệ.</p>
+                                    <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Đầu ra: Bộ thẻ quy trình ứng phó khẩn cấp khi quá tải.</p>
+                                </div>
+
+                                <div class="p-5 rounded-2xl bg-sage-50/70 border border-sage-200/60 space-y-2">
+                                    <span class="text-xs font-bold text-sage-800 uppercase tracking-wide">Tuần 12</span>
+                                    <h4 class="font-bold text-sage-900 text-base">Đóng gói Nhịp sống Đường dài (Life Rhythm Design)</h4>
+                                    <p class="text-xs sm:text-sm text-earth-700"><strong>Nội dung:</strong> Tích hợp nhịp sống mới vào 4 trụ cột cuộc sống (Bản thân – Mối quan hệ – Công việc – Sự nghiệp riêng). Tổng kết báo cáo chuyển hóa.</p>
+                                    <p class="text-xs sm:text-sm text-earth-900 font-semibold pt-1">🎯 Sản phẩm đầu ra Tháng 3: <strong>Bộ Cẩm nang Nhịp sống Cá nhân (Personal Energy Toolkit) vận hành trọn đời.</strong></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3 hover:border-pink-300 transition-colors">
-                        <span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">04</span>
-                        <span class="text-sm sm:text-base font-medium text-earth-900">Danh sách Top 3 Lỗ rò rỉ & Nguồn nạp hiệu quả</span>
+                </div>
+
+                <div class="mt-8 p-6 rounded-2xl bg-white border border-sage-200 text-center text-sm sm:text-base text-earth-800 shadow-sm">
+                    <i class="fa-solid fa-award text-amberGold-500 mr-2 text-xl"></i>
+                    <strong>Đặc quyền Đánh giá Định kỳ:</strong> Cứ sau mỗi tháng thực hành, bạn sẽ nhận được 1 Bảng Tự Phản Chiếu (Reflection Sheet) để định vị rõ dịch chuyển và được Trúc trực tiếp gỡ rối 1-1.
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ĐỐI TƯỢNG -->
+        <section id="fit" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                    <span class="px-4 py-1.5 rounded-full bg-pink-100 text-sage-700 text-xs font-bold uppercase tracking-wider">Chân Dung Học Viên</span>
+                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sage-900">
+                        Chương Trình Này Dành Cho Ai?
+                    </h2>
+                    <p class="text-earth-700 text-sm sm:text-base">Hãy thành thật với chính mình trước khi đăng ký tham gia.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- DÀNH CHO BẠN -->
+                    <div class="bg-sage-50/70 p-8 rounded-3xl border border-sage-200 shadow-sm space-y-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-sage-700 text-white flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <h3 class="font-serif-title text-2xl font-bold text-sage-900">Thực sự DÀNH CHO BẠN nếu:</h3>
+                        </div>
+
+                        <ul class="space-y-4 text-sm sm:text-base text-earth-800">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-sage-700 mt-1 flex-shrink-0"></i>
+                                <span>Bạn là phụ nữ (30–45 tuổi) đang gặp tình trạng kiệt sức ẩn (High-functioning Burnout): công việc vẫn tốt nhưng bên trong luôn ngột ngạt, bất an và cạn kiệt năng lượng.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-sage-700 mt-1 flex-shrink-0"></i>
+                                <span>Bạn cảm thấy 24 giờ không đủ dùng, ôm đồm nhiều việc, khó nói lời từ chối và muốn xây dựng ranh giới sống vững chãi.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-sage-700 mt-1 flex-shrink-0"></i>
+                                <span>Bạn đã chán nản với các phương pháp quản lý thời gian cứng nhắc và muốn chuyển sang quản lý năng lượng sinh học bền vững.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-sage-700 mt-1 flex-shrink-0"></i>
+                                <span>Bạn sẵn sàng cam kết dành ra 10–15 phút mỗi ngày để làm bài tập tự vấn và tương tác cùng Trúc.</span>
+                            </li>
+                        </ul>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3 hover:border-pink-300 transition-colors">
-                        <span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">05</span>
-                        <span class="text-sm sm:text-base font-medium text-earth-900">Bản đồ 3 Trọng tâm Sống cốt lõi</span>
-                    </div>
+                    <!-- KHÔNG DÀNH CHO BẠN -->
+                    <div class="bg-pink-50/50 p-8 rounded-3xl border border-pink-200/80 shadow-sm space-y-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-earth-600 text-white flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                            <h3 class="font-serif-title text-2xl font-bold text-sage-900">KHÔNG DÀNH CHO BẠN nếu:</h3>
+                        </div>
 
-                    <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3 hover:border-pink-300 transition-colors">
-                        <span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">06</span>
-                        <span class="text-sm sm:text-base font-medium text-earth-900">Bộ kịch bản ứng phó ranh giới thực tế</span>
-                    </div>
-
-                    <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3 hover:border-pink-300 transition-colors">
-                        <span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">07</span>
-                        <span class="text-sm sm:text-base font-medium text-earth-900">Sơ đồ phân bổ nhịp sinh học cá nhân</span>
-                    </div>
-
-                    <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3 hover:border-pink-300 transition-colors">
-                        <span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">08</span>
-                        <span class="text-sm sm:text-base font-medium text-earth-900">Bảng lịch trình bảo vệ 3 khoảng trống phục hồi</span>
-                    </div>
-
-                    <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3 hover:border-pink-300 transition-colors">
-                        <span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">09</span>
-                        <span class="text-sm sm:text-base font-medium text-earth-900">Bộ thẻ quy trình ứng phó khẩn cấp khi quá tải</span>
-                    </div>
-
-                    <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3 hover:border-pink-300 transition-colors">
-                        <span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">10</span>
-                        <span class="text-sm sm:text-base font-medium text-earth-900">Bộ Cẩm nang Nhịp sống Cá nhân vận hành trọn đời</span>
+                        <ul class="space-y-4 text-sm sm:text-base text-earth-800">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-xmark text-earth-600 mt-1 flex-shrink-0"></i>
+                                <span>Bạn đang gặp các vấn đề tâm lý/y tế lâm sàng nặng cần sự can thiệp của bác sĩ chuyên khoa.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-xmark text-earth-600 mt-1 flex-shrink-0"></i>
+                                <span>Bạn tìm kiếm giải pháp "thành công nhanh", muốn biến đổi thần tốc sau 1 đêm mà không muốn bỏ thời gian quan sát và tự gỡ rối.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-xmark text-earth-600 mt-1 flex-shrink-0"></i>
+                                <span>Bạn ngại chạm vào các góc khuất của bản thân, không cam kết thực hành bài tập tuần và cần người khác thúc ép, dỗ dành.</span>
+                            </li>
+                        </ul>
                     </div>
 
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECTION: ĐĂNG KÝ & THÔNG TIN HỌC PHÍ -->
-    <section id="register" class="py-20 bg-pink-100/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-7 space-y-6">
-                    <span class="px-4 py-1.5 rounded-full bg-pink-100 text-sage-800 text-xs font-bold uppercase tracking-wider">Thông Tin Chương Trình</span>
-                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sage-900">Cách Chúng Ta Đồng Hành Sâu Sắc</h2>
+        <!-- SECTION: BỘ HỒ SƠ 10 MÓN ĐẦU RA -->
+        <section id="deliverables" class="py-20 bg-pink-50/40 border-y border-pink-200/50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white text-earth-900 rounded-3xl p-8 sm:p-14 shadow-warm border border-pink-200/80 text-center">
                     
-                    <div class="space-y-4 text-sm sm:text-base text-earth-800">
-                        <div class="p-5 rounded-2xl bg-white border border-pink-200/80 shadow-sm flex items-start gap-4">
-                            <i class="fa-solid fa-list-check text-sage-700 text-xl mt-1"></i>
-                            <div>
-                                <strong class="text-sage-900 block text-base font-bold">Khảo sát đầu vào & Bản đồ cá nhân hóa:</strong>
-                                <span class="text-sm text-earth-800">Định vị chính xác hệ tọa độ tổn thương, trạng thái năng lượng hiện tại và nhận bảng tổng quan lộ trình 12 tuần riêng cho bạn.</span>
+                    <div class="max-w-2xl mx-auto space-y-3 mb-10">
+                        <span class="px-4 py-1.5 rounded-full bg-pink-100 text-sage-700 text-xs font-bold uppercase tracking-wider inline-block">
+                            Thành Quả Sau 3 Tháng
+                        </span>
+                        <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sage-900">
+                            10 Sản Phẩm Đầu Ra & Bộ Cẩm Nang Thực Tế
+                        </h2>
+                        <p class="text-sm sm:text-base text-earth-700">
+                            Trong suốt hành trình, bạn không chỉ học lý thuyết mà sẽ hoàn thiện trọn bộ công cụ vận hành nhịp sống thực tế cho riêng mình:
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                        <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">01</span><span class="text-sm sm:text-base font-medium text-earth-900">Bảng đo lường chỉ số năng lượng nền tảng 7 ngày</span></div>
+                        <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">02</span><span class="text-sm sm:text-base font-medium text-earth-900">Bảng phân loại chi tiết Dòng chảy Năng lượng</span></div>
+                        <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">03</span><span class="text-sm sm:text-base font-medium text-earth-900">01 Bản đồ Năng lượng 4 Phân vùng</span></div>
+                        <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">04</span><span class="text-sm sm:text-base font-medium text-earth-900">Danh sách Top 3 Lỗ rò rỉ & Nguồn nạp hiệu quả</span></div>
+                        <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">05</span><span class="text-sm sm:text-base font-medium text-earth-900">Bản đồ 3 Trọng tâm Sống cốt lõi</span></div>
+                        <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">06</span><span class="text-sm sm:text-base font-medium text-earth-900">Bộ kịch bản ứng phó ranh giới thực tế</span></div>
+                        <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">07</span><span class="text-sm sm:text-base font-medium text-earth-900">Sơ đồ phân bổ nhịp sinh học cá nhân</span></div>
+                        <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">08</span><span class="text-sm sm:text-base font-medium text-earth-900">Bảng lịch trình bảo vệ 3 khoảng trống phục hồi</span></div>
+                        <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">09</span><span class="text-sm sm:text-base font-medium text-earth-900">Bộ thẻ quy trình ứng phó khẩn cấp khi quá tải</span></div>
+                        <div class="p-4 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-pink-200/80 text-sage-800 flex items-center justify-center font-bold text-xs flex-shrink-0">10</span><span class="text-sm sm:text-base font-medium text-earth-900">Bộ Cẩm nang Nhịp sống Cá nhân vận hành trọn đời</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ĐĂNG KÝ -->
+        <section id="register" class="py-20 bg-pink-100/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6">
+                        <span class="px-4 py-1.5 rounded-full bg-pink-100 text-sage-800 text-xs font-bold uppercase tracking-wider">Thông Tin Chương Trình</span>
+                        <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sage-900">Cách Chúng Ta Đồng Hành Sâu Sắc</h2>
+                        
+                        <div class="space-y-4 text-sm sm:text-base text-earth-800">
+                            <div class="p-5 rounded-2xl bg-white border border-pink-200/80 shadow-sm flex items-start gap-4">
+                                <i class="fa-solid fa-list-check text-sage-700 text-xl mt-1"></i>
+                                <div>
+                                    <strong class="text-sage-900 block text-base font-bold">Khảo sát đầu vào & Bản đồ cá nhân hóa:</strong>
+                                    <span class="text-sm text-earth-800">Định vị chính xác hệ tọa độ tổn thương, trạng thái năng lượng hiện tại và nhận bảng tổng quan lộ trình 12 tuần riêng cho bạn.</span>
+                                </div>
+                            </div>
+
+                            <div class="p-5 rounded-2xl bg-white border border-pink-200/80 shadow-sm flex items-start gap-4">
+                                <i class="fa-solid fa-video text-sage-700 text-xl mt-1"></i>
+                                <div>
+                                    <strong class="text-sage-900 block text-base font-bold">12 Buổi Live-Workshop qua Zoom:</strong>
+                                    <span class="text-sm text-earth-800">Học trực tiếp, hỏi đáp và gỡ rối chuyên sâu vào <strong>Thứ Tư hằng tuần (20:00 – 21:30)</strong>.</span>
+                                </div>
+                            </div>
+
+                            <div class="p-5 rounded-2xl bg-white border border-pink-200/80 shadow-sm flex items-start gap-4">
+                                <i class="fa-solid fa-sun text-sage-700 text-xl mt-1"></i>
+                                <div>
+                                    <strong class="text-sage-900 block text-base font-bold">Khung Giờ Vàng Đồng Hành Hằng Ngày:</strong>
+                                    <span class="text-sm text-earth-800">Trúc trực tiếp đọc, sửa bài chi tiết và gỡ rối tình huống thực tế 1-1 cho bạn trên nhóm kín.</span>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="p-5 rounded-2xl bg-white border border-pink-200/80 shadow-sm flex items-start gap-4">
-                            <i class="fa-solid fa-video text-sage-700 text-xl mt-1"></i>
-                            <div>
-                                <strong class="text-sage-900 block text-base font-bold">12 Buổi Live-Workshop qua Zoom:</strong>
-                                <span class="text-sm text-earth-800">Học trực tiếp, hỏi đáp và gỡ rối chuyên sâu vào <strong>Thứ Tư hằng tuần (20:00 – 21:30)</strong>.</span>
+                        <div class="p-6 rounded-2xl bg-pink-100/60 border border-pink-200 text-sm text-earth-900 space-y-2">
+                            <p class="font-bold text-base text-sage-900"><i class="fa-solid fa-calendar-days mr-2 text-sage-700"></i>Lịch Khai Giảng & Quy Mô Lớp:</p>
+                            <p>• Ngày khai giảng: <strong>Thứ Tư, ngày 04/11/2026</strong> (20:00 – 21:30)</p>
+                            <p>• Thời lượng: <strong>3 Tháng (12 tuần liên tiếp)</strong></p>
+                            <p>• Quy mô siêu giới hạn: <strong>Chỉ nhận từ 4 đến 6 học viên</strong> (Đảm bảo đồng hành 1-1)</p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5">
+                        <div class="bg-white text-earth-900 rounded-3xl p-8 shadow-warm border-2 border-pink-200/90 space-y-6 text-center">
+                            <span class="text-xs font-bold uppercase tracking-widest text-sage-700">Mức Phí Ưu Đãi Đồng Hành 3 Tháng</span>
+                            <div class="py-3 border-y border-pink-100">
+                                <p class="text-4xl font-bold text-sage-700">4.999.000 VNĐ</p>
+                                <p class="text-xs text-earth-700 mt-1">Học phí gốc: <span class="line-through">8.500.000 VNĐ</span> (Chỉ nhận 4-6 học viên)</p>
                             </div>
+
+                            <div class="text-left bg-pink-50/70 p-5 rounded-2xl border border-pink-200/80 space-y-2.5 text-xs sm:text-sm">
+                                <p class="font-bold text-sage-800 uppercase text-xs"><i class="fa-solid fa-building-columns mr-1.5"></i> Thông Tin Chuyển Khoản</p>
+                                <div class="flex justify-between"><span class="text-earth-700">Ngân hàng:</span><span class="font-bold text-sage-900">MB Bank</span></div>
+                                <div class="flex justify-between"><span class="text-earth-700">Số tài khoản:</span><span class="font-bold text-sage-700 text-base">019228966666</span></div>
+                                <div class="flex justify-between"><span class="text-earth-700">Chủ tài khoản:</span><span class="font-bold text-sage-900">VÕ THANH THIÊN</span></div>
+                                <p class="text-xs text-earth-600 italic pt-2 border-t border-pink-200/60">Cú pháp: 3 Thang Nang Luong + SĐT + Tên</p>
+                            </div>
+
+                            <button onclick="openModal()" class="w-full py-4 rounded-xl bg-sage-700 hover:bg-earth-600 text-white font-bold text-sm uppercase tracking-wider transition-all shadow-md hover:scale-105">
+                                Đăng Ký Giữ Chỗ Ngay
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- TRANG 2: TRANG NỘI DUNG 13/11 ĐỘC LẬP TỪ GOOGLE DOCS (ĐƯỢC CHUYỂN ĐỔI SANG TÔNG MÀU VÀNG NHẠT & TRẮNG NGÀ SANG TRỌNG) -->
+    <main id="page-1311" class="hidden bg-sunCream-50/60 text-sunCream-900">
+        <!-- HERO SECTION KHÓA 13/11 -->
+        <section id="sec-intro-1311" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-gradient-to-b from-sunCream-100/70 via-sunCream-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sunCream-700 text-white text-xs font-bold uppercase tracking-wider shadow-sm animate-pulse">
+                            <i class="fa-solid fa-sparkles text-sunCream-200"></i>
+                            <span>Khai Trương & Hoạt Động Bắt Đầu Từ 13/11/2026</span>
                         </div>
 
-                        <div class="p-5 rounded-2xl bg-white border border-pink-200/80 shadow-sm flex items-start gap-4">
-                            <i class="fa-solid fa-sun text-sage-700 text-xl mt-1"></i>
-                            <div>
-                                <strong class="text-sage-900 block text-base font-bold">Khung Giờ Vàng Đồng Hành Hằng Ngày:</strong>
-                                <span class="text-sm text-earth-800">Trúc trực tiếp đọc, sửa bài chi tiết và gỡ rối tình huống thực tế 1-1 cho bạn trên nhóm kín.</span>
+                        <h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-bold text-sunCream-900 leading-tight">
+                            THAY ĐỔI TỪ MỘT KHOẢNH KHẮC
+                        </h1>
+                        <h2 class="text-xl sm:text-2xl font-bold text-sunCream-700 font-serif italic">
+                            6 tuần thực hành Phương Pháp Khoảng Dừng cùng Trúc Võ
+                        </h2>
+
+                        <div class="bg-white p-6 rounded-2xl border border-sunCream-200 space-y-3 text-sunCream-900 text-base sm:text-lg leading-relaxed text-left shadow-warm">
+                            <p class="font-bold text-sunCream-900">
+                                Bạn đã hiểu rất nhiều về phát triển bản thân. Nhưng tại sao trong những khoảnh khắc đời thường, bạn vẫn phản ứng theo cách mình không mong muốn?
+                            </p>
+                            <ul class="space-y-2 text-sm sm:text-base text-sunCream-800 pt-1">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-minus text-sunCream-600 mt-1"></i><span>Bạn biết mình nên bình tĩnh, nhưng vẫn nổi nóng khi con không nghe lời.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-minus text-sunCream-600 mt-1"></i><span>Bạn muốn được thấu hiểu, nhưng khi chồng không đồng ý, bạn lập tức cảm thấy tổn thương và muốn tranh luận.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-minus text-sunCream-600 mt-1"></i><span>Bạn biết không nên suy diễn, nhưng vẫn bị cuốn vào những suy nghĩ khiến mình khó chịu suốt cả ngày.</span></li>
+                            </ul>
+                            <p class="pt-2 text-sm sm:text-base font-semibold text-sunCream-900 border-t border-sunCream-100">
+                                Bạn không thiếu kiến thức. Có thể điều bạn cần lúc này là học cách đưa những gì mình đã biết vào chính khoảnh khắc mình đang sống.
+                            </p>
+                        </div>
+
+                        <p class="text-base sm:text-lg text-sunCream-800 leading-relaxed">
+                            <strong>Thay đổi từ một khoảnh khắc</strong> là hành trình 6 tuần giúp bạn nhận diện điều đang diễn ra bên trong mình, hiểu những phản ứng quen thuộc và từng bước lấy lại quyền lựa chọn trước khi phản ứng.
+                        </p>
+
+                        <div class="pt-2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#sec-register-1311" class="inline-flex items-center justify-center gap-3 bg-sunCream-700 hover:bg-sunCream-800 text-white font-bold text-base px-8 py-4 rounded-full shadow-lg transition-all hover:scale-105">
+                                <span>Đăng Ký Khóa 6 Tuần</span>
+                                <i class="fa-solid fa-arrow-right text-sm"></i>
+                            </a>
+                            <a href="#sec-roadmap-1311" class="inline-flex items-center justify-center gap-2 bg-sunCream-100 hover:bg-sunCream-200 text-sunCream-900 font-bold text-base px-8 py-4 rounded-full border border-sunCream-300 transition-all">
+                                <span>Xem Lộ Trình 6 Tuần</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 flex justify-center relative">
+                        <div class="relative w-full max-w-md">
+                            <div class="relative rounded-3xl p-3 bg-white shadow-warm border border-sunCream-200 shadow-hover">
+                                <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-sunCream-50">
+                                    <img src="trucvoava.jpg" alt="Trúc Võ" class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-sunCream-900/80 via-transparent to-transparent"></div>
+                                    
+                                    <div class="absolute bottom-5 left-5 right-5 glass-panel p-4 rounded-xl text-center border border-white/60 bg-white/95">
+                                        <p class="font-serif-title text-2xl font-bold text-sunCream-900">Trúc Võ</p>
+                                        <p class="text-xs text-sunCream-700 font-semibold mt-1">Phương Pháp Khoảng Dừng (Khởi động 13/11)</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="p-6 rounded-2xl bg-pink-100/60 border border-pink-200 text-sm text-earth-900 space-y-2">
-                        <p class="font-bold text-base text-sage-900"><i class="fa-solid fa-calendar-days mr-2 text-sage-700"></i>Lịch Khai Giảng & Quy Mô Lớp:</p>
-                        <p>• Ngày khai giảng: <strong>Thứ Tư, ngày 04/11/2026</strong> (20:00 – 21:30)</p>
-                        <p>• Thời lượng: <strong>3 Tháng (12 tuần liên tiếp)</strong></p>
-                        <p>• Quy mô siêu giới hạn: <strong>Chỉ nhận từ 4 đến 6 học viên</strong> (Đảm bảo đồng hành 1-1)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ĐỐI TƯỢNG BẠN NÊN / KHÔNG NÊN -->
+        <section id="sec-fit-1311" class="py-20 bg-white border-y border-sunCream-200/50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="px-4 py-1.5 rounded-full bg-sunCream-100 text-sunCream-800 text-xs font-bold uppercase tracking-wider">Định Vị Nhu Cầu</span>
+                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sunCream-900">
+                        CHƯƠNG TRÌNH NÀY DÀNH CHO AI?
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- DÀNH CHO BẠN -->
+                    <div class="bg-sunCream-50/80 p-8 rounded-3xl border border-sunCream-200 shadow-sm space-y-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-sunCream-700 text-white flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <h3 class="font-serif-title text-xl font-bold text-sunCream-900">Dành cho những người đã học hỏi, đọc sách hoặc tham gia các chương trình phát triển bản thân nhưng vẫn thường xuyên:</h3>
+                        </div>
+
+                        <ul class="space-y-4 text-sm sm:text-base text-sunCream-800">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-sunCream-700 mt-1 flex-shrink-0"></i><span>Mất bình tĩnh với con rồi hối hận.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-sunCream-700 mt-1 flex-shrink-0"></i><span>Cảm thấy giận dữ, tổn thương khi người thân không đồng ý hoặc không làm theo mong muốn của mình.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-sunCream-700 mt-1 flex-shrink-0"></i><span>Suy diễn từ một câu nói, một thái độ hoặc một tình huống nhỏ.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-sunCream-700 mt-1 flex-shrink-0"></i><span>Biết mình cần thay đổi nhưng chưa duy trì được trong đời sống thực tế.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-sunCream-700 mt-1 flex-shrink-0"></i><span>Muốn xây dựng những mối quan hệ bình an hơn, bắt đầu từ việc hiểu chính mình.</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- KHÔNG DÀNH CHO BẠN -->
+                    <div class="bg-amber-50/50 p-8 rounded-3xl border border-amber-200 shadow-sm space-y-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-amber-700 text-white flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                            <h3 class="font-serif-title text-xl font-bold text-sunCream-900">Chương trình KHÔNG dành cho bạn nếu:</h3>
+                        </div>
+
+                        <ul class="space-y-4 text-sm sm:text-base text-sunCream-800">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-xmark text-amber-700 mt-1 flex-shrink-0"></i><span>Bạn chỉ muốn tìm cách kiểm soát cảm xúc tức thì.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-xmark text-amber-700 mt-1 flex-shrink-0"></i><span>Mong người khác thay đổi mà chưa sẵn lòng nhìn lại bản thân.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-xmark text-amber-700 mt-1 flex-shrink-0"></i><span>Chưa sẵn sàng dành thời gian thực hành mỗi ngày.</span></li>
+                        </ul>
+
+                        <div class="p-4 rounded-xl bg-white border border-amber-200 text-xs text-sunCream-700 italic">
+                            * Lưu ý: Đây cũng không phải chương trình thay thế cho hỗ trợ tâm lý hoặc điều trị chuyên môn.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: LỘ TRÌNH 6 TUẦN -->
+        <section id="sec-roadmap-1311" class="py-20 bg-sunCream-100/50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="px-4 py-1.5 rounded-full bg-sunCream-200 text-sunCream-900 text-xs font-bold uppercase tracking-wider">Tiến Trình Chuyển Hóa</span>
+                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sunCream-900">
+                        LỘ TRÌNH 6 TUẦN ĐỒNG HÀNH
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-6 rounded-2xl bg-white border border-sunCream-200 shadow-sm space-y-2">
+                        <span class="px-3 py-1 rounded-full bg-sunCream-700 text-white text-xs font-bold">Tuần 1</span>
+                        <h3 class="font-serif-title text-xl font-bold text-sunCream-900">NHÌN</h3>
+                        <p class="text-sm sm:text-base text-sunCream-800">Nhận diện tình huống kích hoạt và phản ứng quen thuộc.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white border border-sunCream-200 shadow-sm space-y-2">
+                        <span class="px-3 py-1 rounded-full bg-sunCream-700 text-white text-xs font-bold">Tuần 2</span>
+                        <h3 class="font-serif-title text-xl font-bold text-sunCream-900">HIỂU</h3>
+                        <p class="text-sm sm:text-base text-sunCream-800">Gọi tên cảm xúc, nhận biết những tín hiệu từ cơ thể.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white border border-sunCream-200 shadow-sm space-y-2">
+                        <span class="px-3 py-1 rounded-full bg-sunCream-700 text-white text-xs font-bold">Tuần 3</span>
+                        <h3 class="font-serif-title text-xl font-bold text-sunCream-900">NHẬN RA</h3>
+                        <p class="text-sm sm:text-base text-sunCream-800">Phân biệt sự việc thực tế với suy nghĩ và cách tâm trí diễn giải.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white border border-sunCream-200 shadow-sm space-y-2">
+                        <span class="px-3 py-1 rounded-full bg-sunCream-700 text-white text-xs font-bold">Tuần 4</span>
+                        <h3 class="font-serif-title text-xl font-bold text-sunCream-900">KHÁM PHÁ</h3>
+                        <p class="text-sm sm:text-base text-sunCream-800">Nhận diện những niềm tin và kỳ vọng đang ảnh hưởng đến cách bạn phản ứng.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white border border-sunCream-200 shadow-sm space-y-2">
+                        <span class="px-3 py-1 rounded-full bg-sunCream-700 text-white text-xs font-bold">Tuần 5</span>
+                        <h3 class="font-serif-title text-xl font-bold text-sunCream-900">LỰA CHỌN</h3>
+                        <p class="text-sm sm:text-base text-sunCream-800">Thực hành cách đáp lại mới, giao tiếp phù hợp hơn và học cách sửa chữa khi quay lại phản ứng cũ.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white border border-sunCream-200 shadow-sm space-y-2">
+                        <span class="px-3 py-1 rounded-full bg-sunCream-700 text-white text-xs font-bold">Tuần 6</span>
+                        <h3 class="font-serif-title text-xl font-bold text-sunCream-900">CỦNG CỐ</h3>
+                        <p class="text-sm sm:text-base text-sunCream-800">Nhìn lại hành trình, ghi nhận những thay đổi đã có và xây dựng kế hoạch tiếp tục thực hành trong đời sống hằng ngày.</p>
                     </div>
                 </div>
 
-                <div class="lg:col-span-5">
-                    <div class="bg-white text-earth-900 rounded-3xl p-8 shadow-warm border-2 border-pink-200/90 space-y-6 text-center">
-                        <span class="text-xs font-bold uppercase tracking-widest text-sage-700">Mức Phí Ưu Đãi Đồng Hành 3 Tháng</span>
-                        <div class="py-3 border-y border-pink-100">
-                            <p class="text-4xl font-bold text-sage-700">4.999.000 VNĐ</p>
-                            <p class="text-xs text-earth-700 mt-1">Học phí gốc: <span class="line-through">8.500.000 VNĐ</span> (Chỉ nhận 4-6 học viên)</p>
-                        </div>
+                <!-- BẠN SẼ NHẬN ĐƯỢC GÌ -->
+                <div class="bg-white rounded-3xl p-8 sm:p-10 border border-sunCream-200 shadow-warm space-y-6">
+                    <h3 class="font-serif-title text-2xl font-bold text-sunCream-900 text-center">BẠN SẼ NHẬN ĐƯỢC GÌ?</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm sm:text-base text-sunCream-800">
+                        <div class="flex items-start gap-3"><i class="fa-solid fa-sparkles text-sunCream-600 mt-1"></i><span>6 buổi đồng hành trực tiếp qua Zoom.</span></div>
+                        <div class="flex items-start gap-3"><i class="fa-solid fa-sparkles text-sunCream-600 mt-1"></i><span>Bài tập quan sát và thực hành theo từng tuần.</span></div>
+                        <div class="flex items-start gap-3"><i class="fa-solid fa-sparkles text-sunCream-600 mt-1"></i><span>Công cụ nhận diện cảm xúc, suy nghĩ và niềm tin.</span></div>
+                        <div class="flex items-start gap-3"><i class="fa-solid fa-sparkles text-sunCream-600 mt-1"></i><span>Nhật ký quan sát tình huống trong đời sống thực tế.</span></div>
+                        <div class="flex items-start gap-3"><i class="fa-solid fa-sparkles text-sunCream-600 mt-1"></i><span>Phản hồi và hỗ trợ gỡ rối bài tập từ Trúc trong khung giờ đồng hành hằng ngày.</span></div>
+                        <div class="flex items-start gap-3"><i class="fa-solid fa-sparkles text-sunCream-600 mt-1"></i><span>Cơ hội nhìn lại tiến trình, nhận diện điểm mù và ghi nhận sự thay đổi.</span></div>
+                    </div>
+                    <p class="text-center italic text-sunCream-900 border-t border-sunCream-100 pt-4 font-medium">
+                        "Bạn không cần trở thành người luôn bình tĩnh. Bạn sẽ có cơ hội học cách nhận ra cảm xúc sớm hơn, hiểu mình rõ hơn và lựa chọn cách phản ứng phù hợp hơn."
+                    </p>
+                </div>
+            </div>
+        </section>
 
-                        <div class="text-left bg-pink-50/70 p-5 rounded-2xl border border-pink-200/80 space-y-2.5 text-xs sm:text-sm">
-                            <p class="font-bold text-sage-800 uppercase text-xs"><i class="fa-solid fa-building-columns mr-1.5"></i> Thông Tin Chuyển Khoản</p>
-                            <div class="flex justify-between"><span class="text-earth-700">Ngân hàng:</span><span class="font-bold text-sage-900">MB Bank</span></div>
-                            <div class="flex justify-between"><span class="text-earth-700">Số tài khoản:</span><span class="font-bold text-sage-700 text-base">019228966666</span></div>
-                            <div class="flex justify-between"><span class="text-earth-700">Chủ tài khoản:</span><span class="font-bold text-sage-900">VÕ THANH THIÊN</span></div>
-                            <p class="text-xs text-earth-600 italic pt-2 border-t border-pink-200/60">Cú pháp: 3 Thang Nang Luong + SĐT + Tên</p>
-                        </div>
+        <!-- SECTION: LỊCH ZOOM & HỌC PHÍ -->
+        <section id="sec-schedule-1311" class="py-20 bg-white border-y border-sunCream-200/60">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="px-4 py-1.5 rounded-full bg-sunCream-100 text-sunCream-800 text-xs font-bold uppercase tracking-wider">Thời Gian Chi Tiết</span>
+                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sunCream-900">
+                        LỊCH ĐỒNG HÀNH QUA ZOOM & THỰC HÀNH HẰNG NGÀY
+                    </h2>
+                </div>
 
-                        <button onclick="openModal()" class="w-full py-4 rounded-xl bg-sage-700 hover:bg-earth-600 text-white font-bold text-sm uppercase tracking-wider transition-all shadow-md hover:scale-105">
-                            Đăng Ký Giữ Chỗ Ngay
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <div class="bg-sunCream-50 p-8 rounded-3xl border border-sunCream-200 space-y-4">
+                        <h3 class="font-serif-title text-xl font-bold text-sunCream-900"><i class="fa-solid fa-video text-sunCream-700 mr-2"></i>Lịch Live Zoom (20:00 – 21:00)</h3>
+                        <p class="text-sm text-sunCream-800"><strong>Thời lượng:</strong> 6 tuần liên tiếp (Thứ Sáu hằng tuần)</p>
+                        <ul class="space-y-2 text-sm text-sunCream-800 border-t border-sunCream-200 pt-3">
+                            <li class="flex justify-between font-semibold"><span>Buổi 1:</span><span>13/11/2026 (Khai trương)</span></li>
+                            <li class="flex justify-between"><span>Buổi 2:</span><span>20/11/2026</span></li>
+                            <li class="flex justify-between font-semibold"><span>Buổi 3:</span><span>27/11/2026</span></li>
+                            <li class="flex justify-between"><span>Buổi 4:</span><span>04/12/2026</span></li>
+                            <li class="flex justify-between font-semibold"><span>Buổi 5:</span><span>11/12/2026</span></li>
+                            <li class="flex justify-between font-bold text-sunCream-900"><span>Buổi 6:</span><span>18/12/2026</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-sunCream-100/70 p-8 rounded-3xl border border-sunCream-200 space-y-4">
+                        <h3 class="font-serif-title text-xl font-bold text-sunCream-900"><i class="fa-solid fa-pen-to-square text-sunCream-700 mr-2"></i>Quy Trình Thực Hành Hằng Ngày</h3>
+                        <ul class="space-y-3 text-sm text-sunCream-800">
+                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-sunCream-700 mt-1"></i><span>Dành ít phút định tâm và quan sát bản thân.</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-sunCream-700 mt-1"></i><span>Ghi lại một tình huống đáng chú ý trong ngày.</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-sunCream-700 mt-1"></i><span>Gửi bài tập trước 20:00.</span></li>
+                            <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-sunCream-700 mt-1"></i><span>Ghi nhận một nỗ lực của bản thân trước khi đi ngủ.</span></li>
+                        </ul>
+                        <div class="p-4 rounded-2xl bg-white border border-sunCream-200 text-xs text-sunCream-900 font-semibold mt-2">
+                            ✨ <strong>Khung giờ phản hồi bài tập:</strong> 20:00–21:00 hằng ngày, Trúc trực tiếp đọc, phản hồi và hỗ trợ gỡ rối bài tập.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ĐĂNG KÝ HỌC PHÍ KHÓA 6 TUẦN -->
+        <section id="sec-register-1311" class="py-20 bg-sunCream-100/50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-warm border-2 border-sunCream-300 text-center space-y-8">
+                    <div class="space-y-2">
+                        <span class="px-4 py-1.5 rounded-full bg-sunCream-700 text-white text-xs font-bold uppercase tracking-wider">Mức Phí Ưu Đãi Đồng Hành</span>
+                        <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-sunCream-900">BẠN CÓ SẴN SÀNG BẮT ĐẦU TỪ MỘT KHOẢNH KHẮC?</h2>
+                    </div>
+
+                    <div class="py-4 border-y border-sunCream-100">
+                        <p class="text-4xl font-bold text-sunCream-700">1.699.000 VNĐ / 6 tuần</p>
+                        <p class="text-xs sm:text-sm text-sunCream-800 mt-2">Bao gồm 6 buổi Zoom, hệ thống bài tập thực hành, các công cụ hỗ trợ và sự đồng hành, phản hồi bài tập theo lịch đã công bố.</p>
+                    </div>
+
+                    <div class="text-left bg-sunCream-50 p-6 rounded-2xl border border-sunCream-200 space-y-3 text-xs sm:text-sm max-w-lg mx-auto">
+                        <p class="font-bold text-sunCream-900 uppercase text-xs"><i class="fa-solid fa-building-columns mr-1.5"></i> Thông Tin Chuyển Khoản</p>
+                        <div class="flex justify-between"><span class="text-sunCream-800">Ngân hàng:</span><span class="font-bold text-sunCream-900">MB Bank</span></div>
+                        <div class="flex justify-between"><span class="text-sunCream-800">Số tài khoản:</span><span class="font-bold text-sunCream-700 text-base">019228966666</span></div>
+                        <div class="flex justify-between"><span class="text-sunCream-800">Chủ tài khoản:</span><span class="font-bold text-sunCream-900">VÕ THANH THIÊN</span></div>
+                        <p class="text-xs text-sunCream-600 italic pt-2 border-t border-sunCream-200">Cú pháp: Khoang Dung + SĐT + Tên</p>
+                    </div>
+
+                    <div class="max-w-xl mx-auto space-y-4 text-sm text-sunCream-800 leading-relaxed italic">
+                        <p>"Bạn không cần chờ đến khi mình đủ bình tĩnh mới bắt đầu thay đổi."</p>
+                        <p>"Bạn chỉ cần sẵn lòng nhìn lại một tình huống đã xảy ra, tò mò về điều đang diễn ra bên trong và thực hành một lựa chọn khác khi có cơ hội."</p>
+                        <p class="font-bold text-sunCream-900 not-italic">Đôi khi, thay đổi không bắt đầu từ việc làm được điều gì lớn lao. Mà từ khoảnh khắc bạn sắp phản ứng như mọi lần — và lần này, bạn bắt đầu nhận ra mình có một lựa chọn khác.</p>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="openModal()" class="w-full sm:w-auto px-10 py-4 rounded-xl bg-sunCream-700 hover:bg-sunCream-800 text-white font-bold text-sm uppercase tracking-wider transition-all shadow-md hover:scale-105">
+                            ĐĂNG KÝ HÀNH TRÌNH 6 TUẦN
                         </button>
                     </div>
+
+                    <p class="text-xs text-sunCream-600 font-bold">Trúc Võ | Phương Pháp Khoảng Dừng</p>
                 </div>
-
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER CHUNG -->
     <footer class="bg-pink-50/80 text-earth-800 py-12 border-t border-pink-200/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pb-8 border-b border-pink-200/60">
                 <div class="md:col-span-7 space-y-2 text-center md:text-left">
                     <span class="font-serif-title text-2xl font-bold text-sage-900">TRÚC VÕ</span>
-                    <p class="text-sm text-earth-700 max-w-lg leading-relaxed">"Món quà lớn nhất sau 3 Tháng Cân Bằng Năng Lượng không phải là một thế giới không còn biến cố, mà là một người phụ nữ vững chãi, biết cách dừng lại và vận hành một nhịp sống bình an."</p>
+                    <p class="text-sm text-earth-700 max-w-lg leading-relaxed">"Món quà lớn nhất không phải là một thế giới không còn biến cố, mà là một người phụ nữ vững chãi, biết cách dừng lại và vận hành một nhịp sống bình an."</p>
                 </div>
 
                 <div class="md:col-span-5 flex justify-center md:justify-end items-center gap-4">
@@ -664,12 +932,12 @@
             </div>
 
             <div class="pt-6 text-center text-xs text-earth-600">
-                © 2026 Trúc Võ - 3 Tháng Cân Bằng Năng Lượng
+                © 2026 Trúc Võ - Cân Bằng Năng Lượng & Phương Pháp Khoảng Dừng
             </div>
         </div>
     </footer>
 
-    <!-- REGISTRATION MODAL -->
+    <!-- REGISTRATION MODAL CHUNG -->
     <div id="modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-sage-900/40 backdrop-blur-sm p-4">
         <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative border border-pink-200">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-earth-600 w-8 h-8 rounded-full flex items-center justify-center">
@@ -678,10 +946,10 @@
 
             <div class="text-center space-y-1 mb-6">
                 <span class="text-xs font-bold text-sage-700 uppercase tracking-widest">Đăng Ký Hành Trình</span>
-                <h3 class="font-serif-title text-2xl font-bold text-sage-900">3 Tháng Cân Bằng Năng Lượng</h3>
+                <h3 id="modal-title" class="font-serif-title text-2xl font-bold text-sage-900">Cân Bằng Năng Lượng</h3>
             </div>
 
-            <!-- Form đã được tích hợp endpoint Formspree và xử lý gửi dữ liệu qua AJAX -->
+            <!-- Form tích hợp Formspree gốc -->
             <form id="reg-form" action="https://formspree.io/f/mwlpjgqb" method="POST" onsubmit="submitForm(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-sage-900 uppercase mb-1">Họ và Tên</label>
@@ -708,24 +976,97 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT XỬ LÝ TỰ ĐỘNG CHUYỂN TRANG ĐÚNG 00:00 NGÀY 13/11/2026 -->
     <script>
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        const btnMobile = document.getElementById('mobile-menu-btn');
+        const menuMobile = document.getElementById('mobile-menu');
+        btnMobile.addEventListener('click', () => menuMobile.classList.toggle('hidden'));
 
-        // Hàm bật/tắt Accordion mượt mà cho lộ trình 3 tháng
         function toggleAccordion(monthId) {
             const content = document.getElementById(monthId);
             const icon = document.getElementById('icon-' + monthId);
-            
-            content.classList.toggle('open');
-            icon.classList.toggle('rotate-180');
+            if(content && icon) {
+                content.classList.toggle('open');
+                icon.classList.toggle('rotate-180');
+            }
         }
 
-        // Tự động mở sẵn Tháng 1 khi vào trang cho người đọc thấy ngay
+        const targetLaunchDate = new Date("2026-11-13T00:00:00+07:00");
+        let activePage = "original"; 
+
+        function checkLaunchState() {
+            const now = new Date();
+            const pageOrig = document.getElementById('page-original');
+            const page1311 = document.getElementById('page-1311');
+            const navOrig = document.getElementById('nav-menu-original');
+            const nav1311 = document.getElementById('nav-menu-1311');
+            const mobOrig = document.getElementById('mobile-links-orig');
+            const mob1311 = document.getElementById('mobile-links-1311');
+            const btnText = document.getElementById('btn-1311-text');
+            const siteTitle = document.getElementById('site-title');
+            const headerRegBtn = document.getElementById('header-register-btn');
+
+            if (now >= targetLaunchDate) {
+                activePage = "1311";
+                pageOrig.classList.add('hidden');
+                page1311.classList.remove('hidden');
+
+                navOrig.classList.add('hidden');
+                nav1311.classList.remove('hidden');
+                nav1311.classList.add('flex');
+
+                mobOrig.classList.add('hidden');
+                mob1311.classList.remove('hidden');
+
+                btnText.innerText = "🔄 Xem Trang Lịch Sử 3 Tháng";
+                siteTitle.innerText = "Trúc Võ - Thay Đổi Từ Một Khoảnh Khắc (6 Tuần)";
+                headerRegBtn.setAttribute('onclick', "window.location.hash='#sec-register-1311'");
+            } else {
+                if (activePage === "1311") {
+                    pageOrig.classList.add('hidden');
+                    page1311.classList.remove('hidden');
+
+                    navOrig.classList.add('hidden');
+                    nav1311.classList.remove('hidden');
+                    nav1311.classList.add('flex');
+
+                    mobOrig.classList.add('hidden');
+                    mob1311.classList.remove('hidden');
+
+                    btnText.innerText = "⬅️ Quay Lại Trang Gốc";
+                    headerRegBtn.setAttribute('onclick', "window.location.hash='#sec-register-1311'");
+                } else {
+                    pageOrig.classList.remove('hidden');
+                    page1311.classList.add('hidden');
+
+                    navOrig.classList.remove('hidden');
+                    nav1311.classList.add('hidden');
+                    nav1311.classList.remove('flex');
+
+                    mobOrig.classList.remove('hidden');
+                    mob1311.classList.add('hidden');
+
+                    btnText.innerText = "✨ Xem Trước Khóa 13/11 Khai Trương";
+                    siteTitle.innerText = "Trúc Võ - 3 Tháng Cân Bằng Năng Lượng";
+                    headerRegBtn.setAttribute('onclick', "");
+                }
+            }
+        }
+
+        function switchPage() {
+            if (activePage === "original") {
+                activePage = "1311";
+            } else {
+                activePage = "original";
+            }
+            checkLaunchState();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
             toggleAccordion('month-1');
+            checkLaunchState();
+            setInterval(checkLaunchState, 60000);
         });
 
         const modal = document.getElementById('modal');
@@ -733,6 +1074,13 @@
             document.getElementById('reg-form').reset();
             document.getElementById('reg-form').classList.remove('hidden');
             document.getElementById('modal-success').classList.add('hidden');
+            
+            const modalTitle = document.getElementById('modal-title');
+            if (activePage === "1311") {
+                modalTitle.innerText = "Khoảng Dừng 6 Tuần (13/11)";
+            } else {
+                modalTitle.innerText = "3 Tháng Cân Bằng Năng Lượng";
+            }
             modal.classList.remove('hidden');
         }
 
@@ -740,7 +1088,6 @@
             modal.classList.add('hidden');
         }
 
-        // Cập nhật hàm submitForm gửi AJAX dữ liệu tới Formspree
         async function submitForm(e) {
             e.preventDefault();
             const form = e.target;
@@ -754,9 +1101,7 @@
                 const response = await fetch(form.action, {
                     method: form.method,
                     body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 });
 
                 if (response.ok) {
